@@ -1,0 +1,109 @@
+.slider {
+  position: relative;
+  height: 400px; /* You may want to consider using a relative unit like vw for responsive height */
+  margin: 0 auto;
+  overflow: hidden;
+  margin: 0.5rem;
+  border-radius: 10px;
+}
+
+.slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area */
+}
+
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 2rem; /* Adjust based on the screen size */
+  cursor: pointer;
+  z-index: 1;
+}
+
+.left-arrow {
+  left: 10px; /* Added padding from the edge */
+}
+
+.right-arrow {
+  right: 10px; /* Added padding from the edge */
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.banner {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.bannerItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 150px; /* Allow items to grow and shrink, and set a base width */
+  margin: 1rem; /* Space between items */
+  min-width: 150px; /* Minimum width for smaller screens */
+}
+
+.bannerImg {
+  width: 100%; /* Make the image responsive */
+  max-width: 150px; /* Maintain a max width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.bannerGrid1 {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center; /* Center items */
+}
+
+.bannerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 100%; /* Take full width */
+}
+
+.omgImg {
+  max-width: 100%; /* Make sure the image doesn't exceed its container */
+}
+
+.listTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 100%; /* Take full width */
+}
+
+/* Optional: Media Queries for Enhanced Responsiveness */
+@media (max-width: 768px) {
+  .slider {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+
+  .left-arrow,
+  .right-arrow {
+    font-size: 1.5rem; /* Smaller arrows on mobile */
+  }
+
+  .bannerItem {
+    flex: 1 1 100px; /* Smaller base size for smaller screens */
+  }
+
+  .bannerImg {
+    max-width: 100%; /* Ensures the image adapts to the size of the container */
+  }
+}

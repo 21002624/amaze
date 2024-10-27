@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+
+*{
+  text-decoration: none;
+}
+p{
+  padding: 0;
+  margin: 0;
+}
+h4{
+    /* font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal; */
+    font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+}
+
+p{
+    font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+}
+
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+span{
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: small;
+  text-decoration: line-through;
+}
+h2{
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+h1{
+  
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+h5{
+  font-family: "Poiret One", sans-serif;
+  font-weight: 580;
+  font-style: normal;
+}
+.productPercentageText{
+  color: red;
+}
+.taxText{
+  color: green;
+}
+
+header a {
+  text-decoration: none; 
+}
+
+/* Or apply it to all links in your application */
+body a {
+  text-decoration: none; 
+  color: black;
+}

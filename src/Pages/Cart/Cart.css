@@ -1,0 +1,138 @@
+.cartlayout {
+  display: flex;
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden; /* Prevent horizontal overflow */
+  flex-direction: row; /* Keep the layout horizontal */
+  justify-content: space-between; /* Space between cart and total */
+}
+
+.cart {
+  flex: 1; /* Allow cart to grow and take available space */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: flex-start; /* Align items to the start */
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.bttn {
+  width: 200px;
+  margin-top: 0.5rem;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%; /* Full width for items */
+}
+
+.cartItemDiv {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  width: 100%; /* Ensure it doesn't exceed the width */
+}
+
+.cart-item {
+  display: flex;
+  gap: 20px;
+  width: 100%; /* Ensure the cart item doesn't exceed the width */
+  margin-bottom: 1rem;
+}
+
+.cart-item img {
+  width: 200px;
+  height: 200px;
+}
+
+.cart-item p {
+  margin: 0.3rem;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  width: 700px; /* Consider changing this to a responsive unit */
+  min-width: 0; /* Prevent overflow */
+}
+
+.cart-item-details p {
+  font-size: small;
+}
+
+.quantity-controls {
+  margin-bottom: 1rem;
+}
+
+.cartPriceDetails {
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Ensure alignment for price details */
+  align-items: flex-end; /* Align price details to the right */
+  width: 150px;
+}
+
+.cart-total {
+  padding: 20px; /* Add padding for spacing */
+  background-color: #f5f5f5; /* Optional background color */
+  border-top: 1px solid #ddd; /* Optional border for separation */
+  font-weight: bold;
+  font-size: small; /* Set font size for total section */
+  position: sticky; /* Stick to the top when scrolling */
+  top: 0; /* Position at the top of the container */
+  width: 300px; /* Fixed width for the total section */
+  margin-left: 20px; /* Add spacing from the cart section */
+}
+
+.cartTitleDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .cart {
+    padding: 10px; /* Reduced padding for smaller screens */
+  }
+
+  .cart-item {
+    flex-direction: column; /* Stack image and details vertically */
+    align-items: center; /* Center items */
+  }
+
+  .cart-item img {
+    width: 150px; /* Adjust image size */
+    height: 150px; /* Adjust height */
+  }
+
+  .cart-item-details {
+    width: 100%; /* Take full width */
+  }
+
+  .cart-total {
+    width: 100%; /* Take full width on small screens */
+    margin-left: 0; /* Remove margin */
+    margin-top: 20px; /* Add margin on top */
+  }
+}
+
+@media (max-width: 768px) {
+  .cartlayout {
+    flex-direction: column; /* Stack cart and total vertically */
+    height: auto; /* Allow auto height */
+  }
+
+  .cart-total {
+    width: 100%; /* Full width for total */
+  }
+  .cartPriceDetails{
+    display: none;
+  }
+
+  .cartTitleDiv p {
+    display: none;
+  }
+}

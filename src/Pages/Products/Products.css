@@ -1,0 +1,134 @@
+.productsD {
+  display: flex; /* Create a flex container for filters and products */
+  height: 100vh; /* Full height of the viewport */
+}
+
+/* Filters Sidebar */
+.productFilters {
+  width: 300px; /* Fixed width for filters */
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for distinction */
+  border-right: 1px solid #ddd;
+  position: sticky; /* Make it sticky */
+  top: 0; /* Stick to the top */
+  height: 100vh; /* Full height of the viewport */
+  overflow-y: auto; /* Enable scrolling if content exceeds height */
+}
+
+/* Product Grid */
+.productGrid {
+  padding: 20px;
+  width: 100%; /* Take the remaining width */
+  overflow-y: auto; /* Allow scrolling for the product grid */
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for large screens */
+  gap: 20px; /* Space between product boxes */
+}
+
+/* Product Box Styles */
+.productBox {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+}
+
+.productBox img {
+  width: 100%;
+  height: auto;
+  max-height: 150px; /* Maintain aspect ratio */
+  border-radius: 4px;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Loading Spinner */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; 
+}
+
+/* Filter Clear Section */
+.FilterClear {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.FilterClear h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.FilterClear p {
+  margin: 0;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+/* Category Div Styles */
+.categoryDiv {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.categoryDiv ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categoryDiv li {
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.categoryDiv li:hover {
+  background-color: #d8ebff;
+}
+
+/* Responsive Grid Layout */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+
+  /* Adjust filter section for small screens */
+  .productFilters {
+    width: 100%; /* Full width on mobile */
+    border-right: none; /* Remove right border */
+    border-bottom: 1px solid #ddd; /* Add bottom border for distinction */
+  }
+
+  /* Adjust grid padding */
+  .productGrid {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+}
