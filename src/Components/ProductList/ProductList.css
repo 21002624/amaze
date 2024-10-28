@@ -53,7 +53,10 @@
   /* Responsive design: adjust for smaller screens */
   @media (max-width: 768px) {
     .productList > div {
-      gap: 10px; /* Reduce gap between product cards on smaller screens */
+      gap: 10px;
+    }
+    span{
+      display: none;
     }
   
     .productListSlider {

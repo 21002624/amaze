@@ -109,7 +109,7 @@
   }
 
   .cart-item-details {
-    width: 100%; /* Take full width */
+    width: 80%;
   }
 
   .cart-total {
@@ -126,7 +126,10 @@
   }
 
   .cart-total {
-    width: 100%; /* Full width for total */
+    width: 100%; 
+  }
+  .cart-total p{
+    padding-top: 10px;
   }
   .cartPriceDetails{
     display: none;
