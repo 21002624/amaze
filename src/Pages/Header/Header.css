@@ -13,7 +13,6 @@ header {
   display: flex;
   width: 45%;
   align-items: center;
-  flex-wrap: wrap;
   flex-wrap: nowrap;
 }
 
@@ -101,14 +100,11 @@ header {
     flex-direction: column; 
     align-items: flex-start; 
   }
-  .part1{
-    display: none;
-  }
-  .part2{
-    display: flex;
+
+  .part1 {
+    display: none; /* Hide part1 on small screens */
   }
 
-  .part1,
   .part2 {
     width: 100%;
     justify-content: space-between;
@@ -123,6 +119,9 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
   }
+  .bannerItem{
+    max-width: 100%;
+  }
 }
 
 /* Medium screens */
@@ -134,17 +133,58 @@ header {
 
   .part1,
   .part2 {
-    width: 48%;
     justify-content: space-between;
     flex-wrap: nowrap;
   }
 
   .searchBar {
-    width: 250px; /* Slightly narrower search bar */
+    display: none; /* Hide search bar on medium screens */
+  }
+
+  .iconImg1 {
+    display: none;
   }
 
   .iconDiv {
-    width: 180px; /* Narrower icon div */
+    width: 180px;
     gap: 0.8rem;
   }
+}
+
+/* Extra Small screens (below 480px) */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+
+  .logoImg {
+    width: 80px; /* Smaller logo for extra small screens */
+    height: auto;
+  }
+
+  .part2 {
+    width: 100%;
+    justify-content: center; /* Center content */
+  }
+
+  .searchBar {
+    width: 100%; /* Full width for small screens */
+    padding: 8px; /* Reduce padding */
+  }
+
+  .iconDiv {
+    width: 100%;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap; /* Wrap icons on smaller screens */
+  }
+
+  .icon p {
+    font-size: 12px; /* Smaller font for labels */
+  }
+  .bannerGrid1{
+    flex-wrap: nowrap;
+  } 
 }

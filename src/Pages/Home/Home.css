@@ -55,7 +55,7 @@
   align-items: center;
   flex: 1 1 150px; /* Allow items to grow and shrink, and set a base width */
   margin: 1rem; /* Space between items */
-  min-width: 150px; /* Minimum width for smaller screens */
+  /* min-width: 150px; Minimum width for smaller screens */
 }
 
 .bannerImg {
@@ -66,7 +66,7 @@
 
 .bannerGrid1 {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap */
+  /* flex-wrap: wrap; */
   justify-content: center; /* Center items */
 }
 
@@ -103,7 +103,4 @@
     flex: 1 1 100px; /* Smaller base size for smaller screens */
   }
 
-  .bannerImg {
-    max-width: 100%; /* Ensures the image adapts to the size of the container */
-  }
 }
