@@ -58,6 +58,9 @@
     span{
       display: none;
     }
+    .productList{
+      padding: 5px;
+    }
   
     .productListSlider {
       min-width: 150px; /* Smaller product card width for mobile */

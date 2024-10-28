@@ -50,7 +50,7 @@ const Home = () => {
         <div className="banner">
             <div className="ban">
                 <div className="bannerTitle">
-                    <h2>Up to 70% off | Unlock outdoor<br/> adventure</h2>
+                    <h2 className='h2Style'>Up to 70% off | Unlock outdoor<br/> adventure</h2>
                 </div>
                 <div className="bannerGrid">
                     <div className="bannerGrid1">
@@ -78,7 +78,7 @@ const Home = () => {
 
             <div className="ban">
                 <div className="bannerTitle">
-                    <h2>Minimum 50% off | Sports,<br/> outdoor & more</h2>
+                    <h2  className='h2Style'>Minimum 50% off | Sports,<br/> outdoor & more</h2>
                 </div>
                 <div className="bannerGrid">
                     <div className="bannerGrid1">
@@ -106,7 +106,7 @@ const Home = () => {
 
             <div className="ban">
                 <div className="bannerTitle">
-                    <h2>Style & innovation from Small<br/> Businesses</h2>
+                    <h2 className='h2Style'>Style & innovation from Small<br/> Businesses</h2>
                 </div>
                 <div className="bannerGrid">
                     <div className="bannerGrid1">

@@ -95,7 +95,7 @@
 /* Responsive Styles */
 @media (max-width: 992px) {
   .cart {
-    padding: 10px; /* Reduced padding for smaller screens */
+    padding: 10px;
   }
 
   .cart-item {
@@ -137,5 +137,8 @@
 
   .cartTitleDiv p {
     display: none;
+  }
+  .cart-items{
+   gap: 0;
   }
 }

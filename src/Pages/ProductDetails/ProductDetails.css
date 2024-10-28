@@ -72,12 +72,39 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        justify-content: flex-start;
     }
     .ProductDetails div{
-        width: 80%;
+        width: 95%;
     }
     p{
         margin: 0;
     }
-    
+    .ProductDetails{
+        gap: 0;
+    }
+    .productDetailsImg{
+        width: 80%;
+    }
+    .serviceDiv{
+        width: 100%;
+    }
+    .ProductDetailsRight p{
+        margin-bottom: 1rem;
+    }
+    .aboutproduct p{
+        font-size: small;
+        margin-bottom: .5rem;
+    }
+    .aboutproduct h4{
+        font-size: small;
+        margin-bottom: .5rem;
+    }
+    .serviceBox{
+        gap: .5rem;
+    }
+    .productListNavTitle{
+        margin: 0;
+        font-size: x-small;
+    }
   }

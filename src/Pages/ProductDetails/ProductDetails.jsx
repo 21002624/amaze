@@ -63,7 +63,7 @@ const ProductDetails = () => {
         {product ? (
           <div className='ProductDetails'>
             <div className='ProductDetailsLeft'>
-              <img src={product.thumbnail} alt={product.title} />
+              <img className='productDetailsImg' src={product.thumbnail} alt={product.title} />
               <div className="productlikeDiv">
                   <img className='iconImg' src={like} />
                   <img className='iconImg' src={share} />

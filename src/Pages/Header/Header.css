@@ -122,6 +122,9 @@ header {
   .bannerItem{
     max-width: 100%;
   }
+  .icon p{
+    display: none;
+  }
 }
 
 /* Medium screens */
@@ -175,7 +178,6 @@ header {
   }
 
   .iconDiv {
-    width: 100%;
     gap: 0.5rem;
     justify-content: center;
     flex-wrap: wrap; /* Wrap icons on smaller screens */
