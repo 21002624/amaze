@@ -106,5 +106,6 @@
     .productListNavTitle{
         margin: 0;
         font-size: x-small;
+        padding-left: 10px;
     }
   }

@@ -1,0 +1,97 @@
+.payTimeLine{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.payBox{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.PayLine{
+    display: flex;
+    align-items: center;
+}
+.enterPinCode{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.pinBtn{
+    line-height: 0px;
+}
+.payLeft{
+    width: 40%;
+    border-right: 1px solid #ddd;
+    padding-right: 2rem;
+}
+.payRight{
+    width: 30%;
+}
+.selectedItemCount{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.itemCountsInPayRight{
+    display: flex;
+}
+.totalAmountDiv{
+    
+}
+.priceDetailsDiv div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.PayIcon{
+    width: 20px;
+    height: 20px;
+}
+.donateDiv{
+    width: 100%;
+}
+.donateDiv div{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.applyCounpons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.applyCounpons div{
+    display: flex;
+    gap: 1rem;
+}
+.payText{
+    font-size: small;
+}
+.avaliableOffer div{
+    display: flex;
+    gap: 1rem;
+
+}
+.avaliableOffer{
+    border: 1px solid #ddd;
+    margin-top: 1rem;
+    padding: .5rem;
+}
+.paySecureImg{
+    display: flex;
+    gap: .5rem;
+}
+.payItemImg{
+    width: 100px;
+}
+.orderItem{
+    display: flex;
+}

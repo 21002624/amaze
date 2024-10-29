@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState ,us } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Cart.css';
 import { Button } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
@@ -11,6 +12,7 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
   const [cart, setCart] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -69,6 +71,12 @@ const Cart = () => {
     updateTotalCount(updatedCart);
   };
 
+  const proceedToPay = () => {
+    const totalPrice = calculateTotalPrice();
+    const totalDiscount = calculateTotalDiscount();
+    navigate('/pay', { state: {cart, totalPrice, totalDiscount } });
+  };
+
   return (
     <div className="cartlayout">
       <div className="cart">
@@ -124,17 +132,9 @@ const Cart = () => {
         <p>Total Count in Cart: {totalCount}</p>
         <p>Subtotal ({totalCount} items): ₹ {calculateTotalPrice()}</p>
         <p>Total Discount: ₹ {calculateTotalDiscount()}</p>
-        <Link 
-          to={{
-            pathname: '/pay',
-            state: {
-              totalPrice: calculateTotalPrice(),
-              totalDiscount: calculateTotalDiscount(),
-            },
-          }}
-        >
-          <Button className='payBttn' color="secondary">Proceed to Pay</Button>
-        </Link>
+          <Button className="payBttn" color="secondary" onClick={proceedToPay}>
+          Proceed to Pay
+        </Button>
       </div>
     </div>
   );

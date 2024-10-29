@@ -2,3 +2,35 @@
     margin-right: 2px; /* Optional: space between stars */
     vertical-align: middle; /* Aligns the stars vertically in the middle of text */
 }
+
+.couponApply{
+    height: 30px;
+}
+.CouponInput {
+    width: 150px; /* Set the desired width */
+    border: 1px solid red; /* Red border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 8px; /* Padding for better spacing */
+    background-color: white; /* Background color */
+    color: black; /* Text color */
+  }
+  
+  /* Optional: Change the style when focused */
+  .CouponInput:focus {
+    outline: none; /* Remove default outline */
+    border-color: darkred; /* Darker red on focus */
+  }
+  
+  /* Optional: Style for error state */
+  .CouponInput.error {
+    border-color: red; /* Red border for error */
+  }
+
+  .coup{
+    display: flex;
+    flex-direction: column;
+  }
+  .coup p{
+    margin: 1px;
+  }
+  

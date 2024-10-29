@@ -14,6 +14,7 @@ import check from '../../icons/shield-check.svg';
 import restock from '../../icons/restock.svg';
 import cash from '../../icons/deposit.svg';
 import free from '../../icons/free-delivery.svg';
+import { useNavigate } from 'react-router-dom';
 
 const ProductDetails = () => {
   const params = useParams();
@@ -23,6 +24,7 @@ const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
   const [buttonMsg, setButtonMsg] = useState('Add to cart');
   const [quantity, setQuantity] = useState(1); // Track quantity for AddToCart
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get(`https://dummyjson.com/products/${id}`)
@@ -50,6 +52,12 @@ const ProductDetails = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
     setButtonMsg('Added to Cart');
     setTimeout(() => setButtonMsg('Add to cart'), 2000);
+  };
+
+  const proceedToPay = () => {
+    const totalPrice = inr(product.price);
+    const totalDiscount = inr(product.price);
+    navigate('/pay', { state: { totalPrice, totalDiscount } });
   };
 
   if (loading) {
@@ -89,6 +97,9 @@ const ProductDetails = () => {
               <div className='addToCartDiv'>
                 <Button onClick={AddToCartFunction} variant="contained" color="success">
                   {buttonMsg}
+                </Button>
+                <Button className="payBttn" color="secondary" onClick={proceedToPay}>
+                  Proceed to Pay
                 </Button>
               </div>
 

@@ -7,7 +7,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 
 export const renderStars = (rating) => {
     const fullStars = Math.floor(rating); 
-    const maxStars = 5; 
+    const maxStars = 5;  
     const emptyStars = maxStars - fullStars; 
 
     return (
