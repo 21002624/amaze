@@ -95,3 +95,6 @@
 .orderItem{
     display: flex;
 }
+.placeOrderBtn{
+    width: 100%;
+}

@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import { renderStars, inr, name } from '../../Components/SimpleComponents/SimpleComponents';
 import Checkbox from '@mui/material/Checkbox';
 
-const Products = () => {
+const Accessories = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedCategories, setSelectedCategories] = useState([]);
-    const categoriesList = ['mens-shoes', 'mens-shirts', 'groceries'];
+    const categoriesList = [ "mobile-accessories", "smartphones","sports-accessories","tablets"];
 
     useEffect(() => {
         setLoading(true);
@@ -23,7 +23,7 @@ const Products = () => {
                         .then((data) => data.products)
                 )
               ).then((results) => results.flat()) // Flatten results into a single array
-            : fetch('https://dummyjson.com/products/category/mens-shoes') // Fetch all products if no category is selected
+            : fetch('https://dummyjson.com/products/category/mobile-accessories') // Fetch all products if no category is selected
                 .then((response) => response.json())
                 .then((data) => data.products);
 
@@ -101,4 +101,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default Accessories;

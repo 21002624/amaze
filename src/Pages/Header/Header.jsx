@@ -7,7 +7,7 @@ import user from "../../icons/user.svg";
 import search from "../../icons/search.svg";
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ totalCount }) => {
 
 
   return (
@@ -25,9 +25,15 @@ const Header = () => {
         <Link to="/products">
             <h4>Mens</h4>
           </Link>
-          <h4>WOOMENS</h4>
-          <h4>ACCESSORIES</h4>
-          <h4>HOME APPLIEANCES</h4>
+          <Link to="/womens">
+            <h4>Womens</h4>
+          </Link>
+          <Link to="/accessories">
+            <h4>Accessories</h4>
+          </Link>
+          <Link to="/appliances">
+            <h4>appliances</h4>
+          </Link>
         </div>
       </div>
 
@@ -44,12 +50,15 @@ const Header = () => {
             <div className="icon">
               <img className='iconImg' src={cart} alt="Cart Icon" />
               <p>Cart</p>
+              {totalCount > 0 && <p className="cart-count">{totalCount}</p>}
             </div>
           </Link>
-          <div className="icon">
-            <img className='iconImg' src={heart} alt="Wishlist Icon" />
-            <p>Wishlist</p>
-          </div>
+          <Link to='/wishlist'>
+            <div className="icon">
+              <img className='iconImg' src={heart} alt="Wishlist Icon" />
+              <p>Wishlist</p>
+            </div>
+          </Link>
           <div className="icon">
             <img className='iconImg' src={user} alt="Login Icon" />
             <p>Login</p>

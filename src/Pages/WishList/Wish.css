@@ -1,0 +1,29 @@
+/* Wish.css */
+.wishContainer {
+    padding: 20px;
+}
+
+.wishItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.wishItem img {
+    width: 200px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.wishItemDetails {
+    flex-grow: 1;
+}
+
+.wishItem button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+

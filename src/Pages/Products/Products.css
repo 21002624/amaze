@@ -1,6 +1,7 @@
 .productsD {
-  display: flex; /* Create a flex container for filters and products */
-  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: .5rem;
 }
 
 /* Filters Sidebar */
@@ -20,6 +21,9 @@
   padding: 20px;
   width: 100%; /* Take the remaining width */
   overflow-y: auto; /* Allow scrolling for the product grid */
+}
+.appears{
+  margin-bottom: .7rem;
 }
 
 /* Grid Layout */

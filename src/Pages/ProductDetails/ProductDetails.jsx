@@ -7,14 +7,15 @@ import toast from 'react-hot-toast';
 import like from '../../icons/like.svg';
 import share from '../../icons/share.svg';
 import ProductList from '../../Components/ProductList/ProductList';
-import { renderStars, inr, calculateDiscountPercentage,QuantityControls } from '../../Components/SimpleComponents/SimpleComponents';
-// import QuantityControls from '../../Components/QuantityControls/QuantityControls';
-import './ProductDetails.css'
+import { renderStars, inr, QuantityControls } from '../../Components/SimpleComponents/SimpleComponents';
+import './ProductDetails.css';
 import check from '../../icons/shield-check.svg';
 import restock from '../../icons/restock.svg';
 import cash from '../../icons/deposit.svg';
 import free from '../../icons/free-delivery.svg';
 import { useNavigate } from 'react-router-dom';
+import Wishlist from '../../Components/SimpleComponents/WishList';
+import Share from '../../Components/SimpleComponents/Share';
 
 const ProductDetails = () => {
   const params = useParams();
@@ -24,6 +25,8 @@ const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
   const [buttonMsg, setButtonMsg] = useState('Add to cart');
   const [quantity, setQuantity] = useState(1); // Track quantity for AddToCart
+  const [isInCart, setIsInCart] = useState(false); // Track if item is in cart
+  const [cartQuantity, setCartQuantity] = useState(0); // Track quantity in cart
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,6 +34,13 @@ const ProductDetails = () => {
       .then(response => {
         setProduct(response.data);
         setLoading(false);
+        // Check if the product is already in the cart
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingProduct = cart.find(item => item.id === response.data.id);
+        if (existingProduct) {
+          setIsInCart(true);
+          setCartQuantity(existingProduct.quantity); // Set quantity in cart
+        }
       })
       .catch(error => {
         console.error('Error fetching', error);
@@ -39,25 +49,33 @@ const ProductDetails = () => {
   }, [id]);
 
   const AddToCartFunction = () => {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const existingProduct = cart.find(item => item.id === product.id);
 
     if (existingProduct) {
-      existingProduct.quantity += quantity;
+      existingProduct.quantity += quantity; // Update quantity if already in cart
     } else {
       cart.push({ ...product, quantity });
       toast.success("Added to Cart");
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
+    setIsInCart(true); // Mark the item as added to the cart
+    setCartQuantity(existingProduct ? existingProduct.quantity + quantity : quantity); // Update cart quantity
     setButtonMsg('Added to Cart');
-    setTimeout(() => setButtonMsg('Add to cart'), 2000);
   };
 
   const proceedToPay = () => {
     const totalPrice = inr(product.price);
     const totalDiscount = inr(product.price);
     navigate('/pay', { state: { totalPrice, totalDiscount } });
+  };
+
+  const handleQuantityChange = (newQuantity) => {
+    setQuantity(newQuantity);
+    if (isInCart && newQuantity !== cartQuantity) {
+      setButtonMsg('Add to cart'); // Show Add to Cart if quantity is changed
+    }
   };
 
   if (loading) {
@@ -73,14 +91,14 @@ const ProductDetails = () => {
             <div className='ProductDetailsLeft'>
               <img className='productDetailsImg' src={product.thumbnail} alt={product.title} />
               <div className="productlikeDiv">
-                  <img className='iconImg' src={like} />
-                  <img className='iconImg' src={share} />
+                  <Wishlist product={product} />
+                  <Share product={product} />
               </div>
             </div>
 
             <div className='ProductDetailsRight'>
               <h2>{product.title}</h2>
-              <p>{renderStars(product.rating)}2.7k rating</p>
+              <p>{renderStars(product.rating)} 2.7k rating</p>
               <div className="priceDiv">
                 <p className='productPercentageText'>-{product.discountPercentage}% Off</p>
                 <h2> ₹ {inr(product.price)}</h2>
@@ -91,12 +109,12 @@ const ProductDetails = () => {
 
               <QuantityControls 
                 initialCount={1} 
-                onChange={setQuantity} // Update quantity when count changes
+                onChange={handleQuantityChange} // Update quantity when count changes
               />
 
               <div className='addToCartDiv'>
-                <Button onClick={AddToCartFunction} variant="contained" color="success">
-                  {buttonMsg}
+                <Button onClick={AddToCartFunction} variant="contained" color="success" disabled={isInCart && quantity === cartQuantity}>
+                  {isInCart && quantity === cartQuantity ? 'Added to Cart' : buttonMsg}
                 </Button>
                 <Button className="payBttn" color="secondary" onClick={proceedToPay}>
                   Proceed to Pay
@@ -105,34 +123,32 @@ const ProductDetails = () => {
 
               <div className="serviceDiv">
                 <div className="serviceBox">
-                  <img className='serviceiconImg' src={free} />
-                  <p className='serviceText' >Free delivary</p>
+                  <img className='serviceiconImg' src={free} alt="Free Delivery" />
+                  <p className='serviceText'>Free delivery</p>
                 </div>
                 <div className="serviceBox">
-                  <img className='serviceiconImg' src={restock} />
-                  <p className='serviceText' >Free delivary</p>
+                  <img className='serviceiconImg' src={restock} alt="Restock Guarantee" />
+                  <p className='serviceText'>Restock guarantee</p>
                 </div>
                 <div className="serviceBox">
-                  <img className='serviceiconImg' src={cash} />
-                  <p className='serviceText' >Free delivary</p>
+                  <img className='serviceiconImg' src={cash} alt="Cash on Delivery" />
+                  <p className='serviceText'>Cash on delivery</p>
                 </div>
                 <div className="serviceBox">
-                  <img className='serviceiconImg' src={check} />
-                  <p className='serviceText' >Free delivary</p>
+                  <img className='serviceiconImg' src={check} alt="Secure Payments" />
+                  <p className='serviceText'>Secure payments</p>
                 </div>
               </div>
 
-
               <div className="aboutproduct">
                 <div>
-                  <h4 className='productPercentageText'>Terms & Condition</h4>
+                  <h4 className='productPercentageText'>Terms & Conditions</h4>
                   <p>{product.returnPolicy}</p>
                   <p>{product.warrantyInformation}</p>
                 </div>
                 <div>
-                  <h4 className='productPercentageText' >Specifications</h4>
-                  <p>{product.returnPolicy}</p>
-                  <p>{product.warrantyInformation}</p>
+                  <h4 className='productPercentageText'>Specifications</h4>
+                  <p>{product.specifications}</p>
                 </div>
               </div>
             </div>

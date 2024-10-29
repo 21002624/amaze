@@ -6,7 +6,15 @@ header {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding: 0 1rem;
+  position: sticky; 
+  top: 0;           
+  background-color: white; 
+  z-index: 1000;   
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  padding-top: .7rem;
+  padding-bottom: .6rem;
 }
+
 
 .part1,
 .part2 {
@@ -78,7 +86,9 @@ header {
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
+  position: relative; /* Add this line */
 }
+
 
 .iconDiv {
   gap: 1rem;
@@ -91,6 +101,21 @@ header {
 .icon p {
   margin: 0px;
 }
+/* Header.css */
+.cart-count {
+  position: absolute;
+  top: -4px; /* Adjust based on your layout */
+  right: 3px; /* Adjust based on your layout */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  min-width: 2px; /* Ensure it has a minimum width */
+  text-align: center; /* Center text */
+}
+
+
 
 /* Media Queries for Responsiveness */
 

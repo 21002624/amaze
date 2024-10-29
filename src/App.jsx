@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Pages/Header/Header';
 import Home from './Pages/Home/Home';
@@ -9,28 +9,47 @@ import { Toaster } from 'react-hot-toast';
 import Footer from './Pages/Footer/Footer';
 import Cart from './Pages/Cart/Cart';
 import Pay from './Pages/Pay/Pay';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './Pages/Products/Products';
-
+import Womens from './Pages/Products/Womens';
+import Accessories from './Pages/Products/Accessories';
+import Appliances from './Pages/Products/Appliances';
+import Wish from './Pages/WishList/Wish';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [cart, setCart] = useState([]);
+  const [totalCount, setTotalCount] = useState(0);
 
+  useEffect(() => {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    setCart(cartItems);
+    const initialTotalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+    setTotalCount(initialTotalCount);
+  }, []);
+
+  // Function to update cart and total count
+  const updateCart = (updatedCart) => {
+    setCart(updatedCart);
+    const newTotalCount = updatedCart.reduce((sum, item) => sum + item.quantity, 0);
+    setTotalCount(newTotalCount);
+  };
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header totalCount={totalCount} />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/wishlist' element={<Wish />} />
         <Route path='/pay' element={<Pay />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/womens' element={<Womens />} />
+        <Route path='/accessories' element={<Accessories />} />
+        <Route path='/appliances' element={<Appliances />} />
+        <Route path='/cart' element={<Cart cart={cart} updateCart={updateCart} />} />
         <Route path='/products/:category?' element={<Products />} />
         <Route path="/ProductDetails/:id" element={<ProductDetails />} />
       </Routes>
       <Footer />
       <Toaster position="top-center" reverseOrder={false} />
     </BrowserRouter>
-    
   );
 }
 

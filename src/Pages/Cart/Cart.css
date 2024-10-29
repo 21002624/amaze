@@ -113,7 +113,6 @@
   }
 
   .cart-total {
-    width: 100%; /* Take full width on small screens */
     margin-left: 0; /* Remove margin */
     margin-top: 20px; /* Add margin on top */
   }

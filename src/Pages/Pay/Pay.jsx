@@ -130,7 +130,9 @@ const Pay = () => {
                 <p className='taxText'>FREE</p>
               </div>
               <div className="totalAmountDiv">
-                <button >PLACE ORDER</button>
+              <Button className='placeOrderBtn' variant="contained" color="error">
+                PLACE ORDER
+              </Button>
               </div>
             </div>
           </div>
