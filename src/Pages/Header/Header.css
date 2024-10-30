@@ -216,3 +216,81 @@ header {
     flex-wrap: nowrap;
   } 
 }
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Hide sidebar off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease; /* Smooth transition */
+  z-index: 1000; /* Make sure it's above other elements */
+}
+
+.sidebar.open {
+  right: 0; /* Show sidebar */
+}
+
+.closeIcon {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebarNav {
+  padding: 20px;
+}
+
+.sidebarNav a {
+  display: block;
+  margin: 15px 0;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.sidebarNav a:hover {
+  color: #ff4d4d; /* Change color on hover */
+}
+
+/* Menu Icon for Mobile */
+.menuIcon {
+  display: none; /* Hide by default */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .menuIcon {
+    display: block; /* Show menu icon on small screens */
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    cursor: pointer; /* Show pointer cursor */
+  }
+
+  .part1 {
+    display: none; /* Hide part1 on small screens */
+  }
+
+  .part2 {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .searchBar {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .iconDiv {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .icon p {
+    display: none;
+  }
+}

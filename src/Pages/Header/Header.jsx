@@ -6,66 +6,81 @@ import heart from "../../icons/heart.svg";
 import user from "../../icons/user.svg";
 import search from "../../icons/search.svg";
 import { Link } from 'react-router-dom';
+import menu from '../../icons/menu.png';
+import close from '../../icons/close.png';
 
 const Header = ({ totalCount }) => {
+  const [isOpen, setIsOpen] = useState(false); // State to manage sidebar visibility
 
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <header>
-      <div className="part1">
-        {/* Logo Container */}
-        <Link to='/'>
-          <div className="logoDiv">
-            <img className='logoImg' src={logo} alt="Logo" />
-          </div>
-        </Link>
-
-        {/* Category Menu */}
-        <div className="category">
-        <Link to="/products">
-            <h4>Mens</h4>
-          </Link>
-          <Link to="/womens">
-            <h4>Womens</h4>
-          </Link>
-          <Link to="/accessories">
-            <h4>Accessories</h4>
-          </Link>
-          <Link to="/appliances">
-            <h4>Appliances</h4>
-          </Link>
-        </div>
-      </div>
-
-      <div className="part2">
-        <div className="searchContainer">
-          <div className="inputWrapper">
-            <input className="searchBar" type="text" placeholder="Search" />
-            <img className="iconImg1" src={search} alt="Search Icon" />
-          </div>
-        </div>
-
-        <div className="iconDiv">
-          <Link to='/cart'>
-            <div className="icon">
-              <img className='iconImg' src={cart} alt="Cart Icon" />
-              <p>Cart</p>
-              {totalCount > 0 && <p className="cart-count">{totalCount}</p>}
+    <>
+      <header>
+        <div className="part1">
+          {/* Logo Container */}
+          <Link to='/'>
+            <div className="logoDiv">
+              <img className='logoImg' src={logo} alt="Logo" />
             </div>
           </Link>
-          <Link to='/wishlist'>
-            <div className="icon">
-              <img className='iconImg' src={heart} alt="Wishlist Icon" />
-              <p>Wishlist</p>
-            </div>
-          </Link>
-          <div className="icon">
-            <img className='iconImg' src={user} alt="Login Icon" />
-            <p>Login</p>
+
+          {/* Category Menu */}
+          <div className="category">
+            <Link to="/products"><h4>Mens</h4></Link>
+            <Link to="/womens"><h4>Womens</h4></Link>
+            <Link to="/accessories"><h4>Accessories</h4></Link>
+            <Link to="/appliances"><h4>Appliances</h4></Link>
           </div>
         </div>
+
+        <div className="part2">
+          <div className="searchContainer">
+            <div className="inputWrapper">
+              <input className="searchBar" type="text" placeholder="Search" />
+              <img className="iconImg1" src={search} alt="Search Icon" />
+            </div>
+          </div>
+
+          <div className="iconDiv">
+            <Link to='/cart'>
+              <div className="icon">
+                <img className='iconImg' src={cart} alt="Cart Icon" />
+                <p>Cart</p>
+                {totalCount > 0 && <p className="cart-count">{totalCount}</p>}
+              </div>
+            </Link>
+            <Link to='/wishlist'>
+              <div className="icon">
+                <img className='iconImg' src={heart} alt="Wishlist Icon" />
+                <p>Wishlist</p>
+              </div>
+            </Link>
+            <div className="icon">
+              <img className='iconImg' src={user} alt="Login Icon" />
+              <p>Login</p>
+            </div>
+            {/* Menu Icon for Mobile */}
+            <img className="menuIcon" src={menu} alt="Menu" onClick={toggleSidebar} />
+          </div>
+        </div>
+      </header>
+
+      {/* Sidebar */}
+      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <div className="closeIcon" onClick={toggleSidebar}>
+          <img className='iconImg' src={close} alt="Close" />
+        </div>
+        <div className="sidebarNav">
+          <Link to="/products" onClick={toggleSidebar}>Mens</Link>
+          <Link to="/womens" onClick={toggleSidebar}>Womens</Link>
+          <Link to="/accessories" onClick={toggleSidebar}>Accessories</Link>
+          <Link to="/appliances" onClick={toggleSidebar}>Appliances</Link>
+        </div>
       </div>
-    </header>
+    </>
   );
 };
 
