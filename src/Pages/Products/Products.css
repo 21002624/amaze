@@ -158,7 +158,10 @@ h1 {
 
   .productFilters {
     width: 100%; 
-    border-right: none;  
+    border-right: none;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
 
@@ -166,6 +169,6 @@ h1 {
     padding: 10px;
   }
   .productFilters{
-    height: 100px;
+    height: 120px;
   }
 }

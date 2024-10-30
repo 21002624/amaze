@@ -58,10 +58,10 @@ const Header = ({ totalCount }) => {
                 <p>Wishlist</p>
               </div>
             </Link>
-            <div className="icon">
+            {/* <div className="icon">
               <img className='iconImg' src={user} alt="Login Icon" />
               <p>Login</p>
-            </div>
+            </div> */}
             {/* Menu Icon for Mobile */}
             <img className="menuIcon" src={menu} alt="Menu" onClick={toggleSidebar} />
           </div>
