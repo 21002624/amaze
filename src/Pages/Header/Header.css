@@ -223,13 +223,16 @@ header {
 .sidebar {
   position: fixed;
   top: 0;
-  right: -250px; /* Hide sidebar off-screen */
+  right: -250px; 
   width: 250px;
   height: 100%;
   background-color: #fff;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
   transition: right 0.3s ease; /* Smooth transition */
   z-index: 1000; /* Make sure it's above other elements */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .sidebar.open {
@@ -262,6 +265,18 @@ header {
 /* Menu Icon for Mobile */
 .menuIcon {
   display: none; /* Hide by default */
+}
+
+.sidebarNav p{
+  border-bottom: 1px solid #ddd;
+}
+
+.loginBtn{
+  margin-bottom: 20%;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
 }
 
 /* Media Queries for Responsiveness */

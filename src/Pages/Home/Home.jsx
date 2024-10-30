@@ -34,7 +34,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className='home'>
         {/* Slider function */}
         <div className="slider">
         <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="slider-img" />
@@ -173,7 +173,7 @@ const Home = () => {
                 <h1>Groceries</h1>
             </div>
             <ProductList cat="beauty" />
-    </>
+    </div>
   );
 };
 

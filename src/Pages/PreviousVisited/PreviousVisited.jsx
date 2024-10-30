@@ -18,7 +18,7 @@ const PreviousVisited = () => {
 
   return (
     <div className="previousVisitedContainer">
-      <h4>Previously Visited Products</h4>
+      <h2>Previously Visited Products</h2>
       <div className="previousVisitedList">
         {visitedProducts.length > 0 ? (
           visitedProducts.map((product) => (

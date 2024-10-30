@@ -8,6 +8,9 @@ import search from "../../icons/search.svg";
 import { Link } from 'react-router-dom';
 import menu from '../../icons/menu.png';
 import close from '../../icons/close.png';
+import NavigationIcon from '@mui/icons-material/Navigation';
+import Fab from '@mui/material/Fab';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
 const Header = ({ totalCount }) => {
   const [isOpen, setIsOpen] = useState(false); // State to manage sidebar visibility
@@ -70,14 +73,20 @@ const Header = ({ totalCount }) => {
 
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <div className="closeIcon" onClick={toggleSidebar}>
-          <img className='iconImg' src={close} alt="Close" />
+        <div>
+          <div className="closeIcon" onClick={toggleSidebar}>
+            <img className='iconImg' src={close} alt="Close" />
+          </div>
+          <div className="sidebarNav">
+            <Link to="/products" onClick={toggleSidebar}><p>Mens</p></Link>
+            <Link to="/womens" onClick={toggleSidebar}><p>Womens</p></Link>
+            <Link to="/accessories" onClick={toggleSidebar}><p>Accessories</p></Link>
+            <Link to="/appliances" onClick={toggleSidebar}><p>Appliances</p></Link>
+          </div>
         </div>
-        <div className="sidebarNav">
-          <Link to="/products" onClick={toggleSidebar}>Mens</Link>
-          <Link to="/womens" onClick={toggleSidebar}>Womens</Link>
-          <Link to="/accessories" onClick={toggleSidebar}>Accessories</Link>
-          <Link to="/appliances" onClick={toggleSidebar}>Appliances</Link>
+        <div className='loginBtn'>
+            <AccountCircle style={{ fontSize: 24 }} /> {/* Adjust size if needed */}
+            <h4>Login</h4>
         </div>
       </div>
     </>

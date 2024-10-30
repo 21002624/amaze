@@ -110,6 +110,9 @@ h1 {
 .smallText{
   font-size: small;
 }
+.categoryDiv::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
+}
 
 /* Responsive Grid Layout */
 @media (max-width: 992px) {

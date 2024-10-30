@@ -6,6 +6,9 @@
   margin: 0.5rem;
   border-radius: 10px;
 }
+.home{
+  width: 100%;
+}
 
 .slider-img {
   width: 100%;

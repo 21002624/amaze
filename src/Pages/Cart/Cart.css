@@ -92,6 +92,10 @@
   justify-content: space-between;
 }
 
+.cart-items::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
   .cart {
