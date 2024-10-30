@@ -8,6 +8,7 @@ import toast from 'react-hot-toast';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { renderStars, inr, name, calculateDiscountPercentage, freeShippingEligibility } from '../../Components/SimpleComponents/SimpleComponents';
 import { Link } from 'react-router-dom';
+import PreviousVisited from '../PreviousVisited/PreviousVisited';
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -78,6 +79,7 @@ const Cart = () => {
   };
 
   return (
+    <>
     <div className="cartlayout">
       <div className="cart">
         {cart.length === 0 ? (
@@ -137,6 +139,10 @@ const Cart = () => {
         </Button>
       </div>
     </div>
+
+    <PreviousVisited />
+    
+    </>
   );
 };
 
