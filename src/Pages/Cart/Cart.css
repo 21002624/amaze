@@ -123,6 +123,9 @@
     flex-direction: column; /* Stack cart and total vertically */
     height: auto; /* Allow auto height */
   }
+  .bttn{
+    width: 150px;
+  }
 
   .cart-total {
     width: 100%; 

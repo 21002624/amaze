@@ -117,22 +117,55 @@ h1 {
   .grid {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
   }
+  .productFilters{
+    width: 100%;
+  }
+  .productsD{
+    flex-direction: column;
+  }
+  .productFilters{
+    width: 20px;
+  }
+  .categoryDiv {
+    overflow-x: auto; 
+    border: none;
+}
+
+.categoryDiv ul {
+    display: flex; /* Align items in a row */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.categoryDiv li {
+    margin-right: 20px; /* Space between items */
+    white-space: nowrap; /* Prevent text wrapping */
+    border: 1px solid black;
+    border-radius: 50px;
+    padding-right: 10px;
+}
+.appears{
+  display: none;
+}
+
 }
 
 @media (max-width: 480px) {
   .grid {
-    grid-template-columns: 1fr; /* 1 column on small screens */
+    grid-template-columns: 1fr; 
   }
 
-  /* Adjust filter section for small screens */
   .productFilters {
-    width: 100%; /* Full width on mobile */
-    border-right: none; /* Remove right border */
-    border-bottom: 1px solid #ddd; /* Add bottom border for distinction */
+    width: 100%; 
+    border-right: none;  
   }
 
-  /* Adjust grid padding */
+
   .productGrid {
-    padding: 10px; /* Reduce padding for smaller screens */
+    padding: 10px;
+  }
+  .productFilters{
+    height: 100px;
   }
 }

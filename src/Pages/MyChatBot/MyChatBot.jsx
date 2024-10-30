@@ -7,9 +7,9 @@ const MyChatBot = () => {
         {id: "simple_blue", version: "0.1.0"}
       ]
 
-    
+     
   return (
-    <ChatBot themes={themes} />
+    <ChatBot  />
   );
 };
 

@@ -10,6 +10,11 @@ import Wishlist from '../../Components/SimpleComponents/WishList';
 import Share from '../../Components/SimpleComponents/Share';
 import PreviousVisited from '../PreviousVisited/PreviousVisited';
 import './ProductDetails.css';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import free from '../../icons/free-delivery.svg';
+import restock from '../../icons/restock.svg';
+import check from '../../icons/shield-check.svg';
+import cash from '../../icons/deposit.svg';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -123,10 +128,30 @@ const ProductDetails = () => {
               <div className='addToCartDiv'>
                 <Button onClick={AddToCartFunction} variant="contained" color="success" disabled={isInCart && quantity === cartQuantity}>
                   {isInCart && quantity === cartQuantity ? 'Added to Cart' : buttonMsg}
+                  <AddShoppingCartIcon />
                 </Button>
                 <Button className="payBttn" color="secondary" onClick={proceedToPay}>
                   Proceed to Pay
                 </Button>
+              </div>
+
+              <div className="serviceDiv">
+                <div className="serviceBox">
+                  <img className='serviceiconImg' src={free} alt="Free Delivery" />
+                  <p className='serviceText'>Free delivery</p>
+                </div>
+                <div className="serviceBox">
+                  <img className='serviceiconImg' src={restock} alt="Restock Guarantee" />
+                  <p className='serviceText'>Restock guarantee</p>
+                </div>
+                <div className="serviceBox">
+                  <img className='serviceiconImg' src={cash} alt="Cash on Delivery" />
+                  <p className='serviceText'>Cash on delivery</p>
+                </div>
+                <div className="serviceBox">
+                  <img className='serviceiconImg' src={check} alt="Secure Payments" />
+                  <p className='serviceText'>Secure payments</p>
+                </div>
               </div>
             </div>
           </div>

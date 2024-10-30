@@ -30,7 +30,7 @@ const Wish = () => {
                         <li key={product.id} className="wishItem">
                             <img className='wishImg' src={product.thumbnail} alt={product.title} />
                             <div className="wishItemDetails">
-                                <h3>{product.title}</h3>
+                                <h4>{product.title}</h4>
                                 <p>Price: ₹ {product.price}</p>
                                 <button onClick={() => handleRemoveFromWishlist(product.id)}>
                                     Remove

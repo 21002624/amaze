@@ -1,29 +1,65 @@
-/* Wish.css */
 .wishContainer {
     padding: 20px;
-}
-
-.wishItem {
+  }
+  
+  .wishItem {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-}
-
-.wishItem img {
+  }
+  
+  .wishItem img {
     width: 200px;
     height: auto;
     margin-right: 15px;
-}
-
-.wishItemDetails {
+    border-radius: 5px;
+  }
+  
+  .wishItemDetails {
     flex-grow: 1;
-}
-
-.wishItem button {
+  }
+  
+  .wishItem button {
     background-color: #ff4d4d;
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-}
-
+  }
+  
+  @media (max-width: 768px) {
+    .wishContainer {
+      padding: 15px;
+    }
+  
+    .wishItem img {
+      width: 150px; /* Adjust image width for smaller screens */
+      margin-right: 10px;
+    }
+  
+    .wishItem button {
+      padding: 4px 8px; /* Adjust button padding */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .wishContainer {
+      padding: 10px;
+    }
+  
+    .wishItem {
+      align-items: flex-start;
+    }
+  
+    .wishItem img {
+      width: 40%; /* Full width for smaller screens */
+      margin: 0 0 10px 0;
+    }
+  
+    .wishItem button {
+      padding: 6px 12px;
+      width: 100%; /* Full-width button */
+      text-align: center;
+    }
+  }
+  

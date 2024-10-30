@@ -29,6 +29,9 @@
 }
 .addToCartDiv{
     margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 .productListNavTitle{
     margin-left: 2rem;
