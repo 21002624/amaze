@@ -3,20 +3,21 @@ import './Home.css';
 import img1 from '../../assets/1.jpg';
 import img2 from '../../assets/2.jpg';
 import img3 from '../../assets/3.jpg';
-import g11 from '../../assets/g11.avif'
-import g12 from '../../assets/g12.jpg';
-import g13 from '../../assets/g13.png';
-import g14 from '../../assets/g14.jpg';
+import g11 from '../../assets/b1.png'
+import g12 from '../../assets/b2.png';
+import g13 from '../../assets/b3.png';
+import g14 from '../../assets/b4.png';
 import omg from '../../assets/omg.png';
-import g21 from '../../assets/g21.jpg';
-import g22 from '../../assets/g22.jpg';
-import g23 from '../../assets/g23.jpg';
-import g24 from '../../assets/g24.jpg';
-import g31 from '../../assets/g31.jpg';
-import g32 from '../../assets/g32.webp';
-import g33 from '../../assets/g33.webp';
-import g34 from '../../assets/g34.webp';
+import g21 from '../../assets/s1.png';
+import g22 from '../../assets/s2.png';
+import g23 from '../../assets/s3.png';
+import g24 from '../../assets/s4.png';
+import g31 from '../../assets/p1.png';
+import g32 from '../../assets/p2.png';
+import g33 from '../../assets/p3.png';
+import g34 from '../../assets/p4.png';
 import ProductList from '../../Components/ProductList/ProductList';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -55,22 +56,30 @@ const Home = () => {
                 <div className="bannerGrid">
                     <div className="bannerGrid1">
                         <div className="bannerItem">
+                        <Link to={`/ProductDetails/1`} >
                             <img className='bannerImg' src={g11} />
-                            <p>iphone 11</p>
+                            <p>Mascara</p>
+                        </Link>
                         </div>
                         <div className="bannerItem">
+                        <Link to={`/ProductDetails/2`} >
                             <img className='bannerImg' src={g12} />
-                            <p>iphone 11</p>
+                            <p>Eyeshadow</p>
+                        </Link>
                         </div>
                     </div>
                     <div className="bannerGrid1">
                     <div className="bannerItem">
+                        <Link to={`/ProductDetails/3`} >
                             <img className='bannerImg' src={g13} />
-                            <p>iphone 11</p>
+                            <p>Canister</p>
+                        </Link>
                         </div>
                         <div className="bannerItem">
+                        <Link to={`/ProductDetails/4`} >
                             <img className='bannerImg' src={g14} />
-                            <p>iphone 11</p>
+                            <p>Lipstick</p>
+                        </Link>
                         </div>
                     </div>
                 </div>
@@ -83,22 +92,30 @@ const Home = () => {
                 <div className="bannerGrid">
                     <div className="bannerGrid1">
                         <div className="bannerItem">
+                        <Link to={`/ProductDetails/88`} >
                             <img className='bannerImg' src={g21} />
-                            <p>iphone 11</p>
+                            <p>Nike Air</p>
+                        </Link>
                         </div>
                         <div className="bannerItem">
+                        <Link to={`/ProductDetails/89`} >
                             <img className='bannerImg' src={g22} />
-                            <p>iphone 11</p>
+                            <p>Nike Baseball</p>
+                        </Link>
                         </div>
                     </div>
                     <div className="bannerGrid1">
-                    <div className="bannerItem">
+                        <div className="bannerItem">
+                        <Link to={`/ProductDetails/90`} >
                             <img className='bannerImg' src={g23} />
-                            <p>iphone 11</p>
+                            <p>Puma Future</p>
+                        </Link>
                         </div>
                         <div className="bannerItem">
+                        <Link to={`/ProductDetails/91`} >
                             <img className='bannerImg' src={g24} />
-                            <p>iphone 11</p>
+                            <p>Sports Sneakers</p>
+                        </Link>
                         </div>
                     </div>
                 </div>
@@ -111,22 +128,30 @@ const Home = () => {
                 <div className="bannerGrid">
                     <div className="bannerGrid1">
                         <div className="bannerItem">
-                            <img className='bannerImg' src={g31} />
-                            <p>iphone 11</p>
+                            <Link to={`/ProductDetails/101`} >
+                                <img className='bannerImg' src={g31} />
+                                <p>AirPods Max</p>
+                            </Link>
                         </div>
                         <div className="bannerItem">
+                        <Link to={`/ProductDetails/100`} >
                             <img className='bannerImg' src={g32} />
-                            <p>iphone 11</p>
+                            <p>Airpods</p>
+                        </Link>
                         </div>
                     </div>
                     <div className="bannerGrid1">
                     <div className="bannerItem">
+                    <Link to={`/ProductDetails/106`} >
                             <img className='bannerImg' src={g33} />
-                            <p>iphone 11</p>
+                            <p>Series 4 Gold</p>
+                            </Link>
                         </div>
                         <div className="bannerItem">
+                        <Link to={`/ProductDetails/99`} >
                             <img className='bannerImg' src={g34} />
-                            <p>iphone 11</p>
+                            <p>Amazon Echo</p>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -148,8 +173,6 @@ const Home = () => {
                 <h1>Groceries</h1>
             </div>
             <ProductList cat="beauty" />
-
-        
     </>
   );
 };

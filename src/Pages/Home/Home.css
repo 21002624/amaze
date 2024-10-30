@@ -1,6 +1,6 @@
 .slider {
   position: relative;
-  height: 400px; /* You may want to consider using a relative unit like vw for responsive height */
+  height: 400px; 
   margin: 0 auto;
   overflow: hidden;
   margin: 0.5rem;
@@ -10,7 +10,7 @@
 .slider-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image covers the area */
+  object-fit: cover;
 }
 
 .left-arrow,
@@ -22,17 +22,17 @@
   color: white;
   border: none;
   padding: 10px;
-  font-size: 2rem; /* Adjust based on the screen size */
+  font-size: 2rem;
   cursor: pointer;
   z-index: 1;
 }
 
 .left-arrow {
-  left: 10px; /* Added padding from the edge */
+  left: 10px;
 }
 
 .right-arrow {
-  right: 10px; /* Added padding from the edge */
+  right: 10px; 
 }
 
 .left-arrow:hover,
@@ -42,7 +42,7 @@
 
 .banner {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
   margin-top: 3rem;
@@ -53,54 +53,59 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1 1 150px; /* Allow items to grow and shrink, and set a base width */
-  margin: 1rem; /* Space between items */
-  /* min-width: 150px; Minimum width for smaller screens */
+  justify-content: center;
+  flex: 1 1 150px; 
+  margin: 1rem; 
+}
+
+.bannerItem a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .bannerImg {
-  width: 100%; /* Make the image responsive */
-  max-width: 150px; /* Maintain a max width */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%; 
+  max-width: 150px; 
+  height: auto; 
 }
 
 .bannerGrid1 {
   display: flex;
-  /* flex-wrap: wrap; */
-  justify-content: center; /* Center items */
+  justify-content: center; 
 }
 
 .bannerTitle {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-basis: 100%; /* Take full width */
+  flex-basis: 100%; 
 }
 
 .omgImg {
-  max-width: 100%; /* Make sure the image doesn't exceed its container */
+  max-width: 100%; 
 }
 
 .listTitle {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-basis: 100%; /* Take full width */
+  flex-basis: 100%; 
 }
 
-/* Optional: Media Queries for Enhanced Responsiveness */
 @media (max-width: 768px) {
   .slider {
-    height: 300px; /* Adjust height for smaller screens */
+    height: 300px; 
   }
 
   .left-arrow,
   .right-arrow {
-    font-size: 1.5rem; /* Smaller arrows on mobile */
+    font-size: 1.5rem; 
   }
 
   .bannerItem {
-    flex: 1 1 100px; /* Smaller base size for smaller screens */
+    flex: 1 1 100px; 
   }
 
 }

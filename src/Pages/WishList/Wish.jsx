@@ -1,22 +1,22 @@
 // Wish.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState  } from 'react';
 import { toast } from 'react-hot-toast';
 import './Wish.css'; // Import your styles if needed
+import { refresh } from 'react';
 
 const Wish = () => {
     const [wishlist, setWishlist] = useState([]);
 
     useEffect(() => {
-        // Retrieve the wishlist from localStorage
         const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
         setWishlist(storedWishlist);
-    }, []);
+    }, [refresh]); // Depend on refresh state
 
     const handleRemoveFromWishlist = (productId) => {
         const updatedWishlist = wishlist.filter(item => item.id !== productId);
         localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
         setWishlist(updatedWishlist);
-        toast.success('Removed from Wishlist');
+        setRefresh(prev => !prev); // Trigger re-render
     };
 
     return (

@@ -92,7 +92,7 @@ header {
 
 .iconDiv {
   gap: 1rem;
-  width: 200px;
+  /* width: 200px; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -195,6 +195,7 @@ header {
   .part2 {
     width: 100%;
     justify-content: center; /* Center content */
+    gap: 1rem;
   }
 
   .searchBar {

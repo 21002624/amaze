@@ -140,4 +140,11 @@
   .cart-items{
    gap: 0;
   }
+  .cart-item{
+    flex-direction: row;
+  }
+  .cart-item-details h4{
+    display: none;
+  }
+
 }

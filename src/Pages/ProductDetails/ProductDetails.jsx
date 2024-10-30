@@ -34,6 +34,7 @@ const ProductDetails = () => {
       .then(response => {
         setProduct(response.data);
         setLoading(false);
+        console.log("Product ID:", response.data.id);
         // Check if the product is already in the cart
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const existingProduct = cart.find(item => item.id === response.data.id);

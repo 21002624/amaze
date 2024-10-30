@@ -32,7 +32,7 @@ const Header = ({ totalCount }) => {
             <h4>Accessories</h4>
           </Link>
           <Link to="/appliances">
-            <h4>appliances</h4>
+            <h4>Appliances</h4>
           </Link>
         </div>
       </div>

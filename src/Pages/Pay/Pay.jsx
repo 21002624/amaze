@@ -26,23 +26,9 @@ const Pay = () => {
   return (
     <div className='pay'>
       <div className="payTimeLine">
-        <div className="payImg">
-          payImg
-        </div>
-        <div className="PayLine">
-          <div className="address">
-            <h4>BAG --------- </h4>
-          </div>
-          <div className="payment">
-            <h4>PAYMENT---------</h4>
-          </div>
-          <div className="payment">
-            <h4>PAYMENT</h4>
-          </div>
-        </div>
         <div className="paySecureImg">
           <img className='PayIcon' src={shield} />
-          <h4>100% SECURE</h4>
+          <h2>100% SECURE</h2>
         </div>
       </div>
 
@@ -63,7 +49,7 @@ const Pay = () => {
           <div className="selectedItems">
             <div className="selectedItemCount">
               <div className="itemCountsInPay">
-                selected items
+                <h4>Selected items</h4>
               </div>
               <div className="itemCountsInPayRight">
                 <p>remove</p>

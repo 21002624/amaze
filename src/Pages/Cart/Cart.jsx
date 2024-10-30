@@ -84,7 +84,7 @@ const Cart = () => {
           <p>Cart is empty</p>
         ) : (
           <div className="cart-items">
-            <div className="cartTitleDiv">
+            <div className="cartTitleDiv"> 
               <h1>Shopping Cart</h1>
               <p>Price</p>
             </div>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect ,refresh } from 'react';
 import './App.css';
 import Header from './Pages/Header/Header';
 import Home from './Pages/Home/Home';
@@ -14,6 +14,7 @@ import Womens from './Pages/Products/Womens';
 import Accessories from './Pages/Products/Accessories';
 import Appliances from './Pages/Products/Appliances';
 import Wish from './Pages/WishList/Wish';
+import MyChatBot from '../src/Pages/MyChatBot/MyChatBot';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -24,7 +25,7 @@ function App() {
     setCart(cartItems);
     const initialTotalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
     setTotalCount(initialTotalCount);
-  }, []);
+  }, [refresh]);
 
   // Function to update cart and total count
   const updateCart = (updatedCart) => {
@@ -49,6 +50,7 @@ function App() {
       </Routes>
       <Footer />
       <Toaster position="top-center" reverseOrder={false} />
+      <MyChatBot />
     </BrowserRouter>
   );
 }

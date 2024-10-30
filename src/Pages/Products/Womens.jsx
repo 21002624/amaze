@@ -9,7 +9,7 @@ const Womens = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedCategories, setSelectedCategories] = useState([]);
-    const categoriesList = ["womens-bags", "womens-dresses", "womens-jewellery","womens-shoes","womens-watches" ];
+    const categoriesList = ["womens-bags", "womens-dresses", "womens-jewellery","womens-shoes","womens-watches", "beauty" ];
 
     useEffect(() => {
         setLoading(true);
