@@ -74,7 +74,7 @@ const Products = () => {
                                     onChange={handleCategoryChange}
                                     name={cat}
                                 />
-                                {cat.replace('-', ' ').charAt(0).toUpperCase() + cat.replace('-', ' ').slice(1)}
+                                <p className='smallText' >{cat.replace('-', ' ').charAt(0).toUpperCase() + cat.replace('-', ' ').slice(1)}</p>
                             </li>
                         ))}
                     </ul>

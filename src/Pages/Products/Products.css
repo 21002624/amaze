@@ -100,10 +100,15 @@ h1 {
 .categoryDiv li {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
 }
 
 .categoryDiv li:hover {
   background-color: #d8ebff;
+}
+.smallText{
+  font-size: small;
 }
 
 /* Responsive Grid Layout */
@@ -141,7 +146,7 @@ h1 {
 .categoryDiv li {
     margin-right: 20px; /* Space between items */
     white-space: nowrap; /* Prevent text wrapping */
-    border: 1px solid black;
+    border: 1px solid #ddd;
     border-radius: 50px;
     padding-right: 10px;
 }
