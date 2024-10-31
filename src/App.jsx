@@ -15,6 +15,7 @@ import Accessories from './Pages/Products/Accessories';
 import Appliances from './Pages/Products/Appliances';
 import Wish from './Pages/WishList/Wish';
 import MyChatBot from '../src/Pages/MyChatBot/MyChatBot';
+import Address from './Pages/Address/Address';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -41,6 +42,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/wishlist' element={<Wish />} />
         <Route path='/pay' element={<Pay />} />
+        <Route path='/address' element={<Address />} />
         <Route path='/womens' element={<Womens />} />
         <Route path='/accessories' element={<Accessories />} />
         <Route path='/appliances' element={<Appliances />} />

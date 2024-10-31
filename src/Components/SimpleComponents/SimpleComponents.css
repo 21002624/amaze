@@ -34,3 +34,59 @@
     margin: 1px;
   }
   
+
+  .circleButton {
+    background-color: #ddd;
+    border: none; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+  }
+  
+  .circleButton:hover {
+    background-color: #ccc; 
+  }
+  
+  .review-item div{
+    display: flex;
+    padding-left: 5%;
+  }
+
+  .review-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    gap: 2rem;
+  }
+
+  .reviewDiv{
+    flex-direction: column;
+    margin-left: 5%;
+  }
+  .reviewer{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .review-section p{
+    padding: 0;
+    margin: .1rem;
+  }
+
+  @media (max-width: 768px){
+    .review-section{
+      width: 100%;
+      padding: 1rem;
+    }
+    .reviewDiv{
+      margin-left: 2rem;
+    }
+  }

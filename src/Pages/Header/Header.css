@@ -294,7 +294,7 @@ header {
 
   .part2 {
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   .searchBar {

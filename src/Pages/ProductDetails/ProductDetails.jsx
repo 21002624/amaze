@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState  , useRef} from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Button } from '@mui/material';
 import toast from 'react-hot-toast';
 import ProductList from '../../Components/ProductList/ProductList';
-import { renderStars, inr, QuantityControls } from '../../Components/SimpleComponents/SimpleComponents';
+import { renderStars, inr, QuantityControls ,BStyles } from '../../Components/SimpleComponents/SimpleComponents';
 import Wishlist from '../../Components/SimpleComponents/WishList';
 import Share from '../../Components/SimpleComponents/Share';
 import PreviousVisited from '../PreviousVisited/PreviousVisited';
@@ -15,6 +15,7 @@ import free from '../../icons/free-delivery.svg';
 import restock from '../../icons/restock.svg';
 import check from '../../icons/shield-check.svg';
 import cash from '../../icons/deposit.svg';
+import Review from '../../Components/SimpleComponents/Review';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -25,6 +26,7 @@ const ProductDetails = () => {
   const [isInCart, setIsInCart] = useState(false);
   const [cartQuantity, setCartQuantity] = useState(0);
   const navigate = useNavigate();
+  const reviewRef = useRef(null);
 
   useEffect(() => {
     axios.get(`https://dummyjson.com/products/${id}`)
@@ -88,6 +90,12 @@ const ProductDetails = () => {
     }
   };
 
+  const scrollToReviews = () => { 
+    if (reviewRef.current) {
+        reviewRef.current.scrollIntoView({ behavior: 'smooth'});
+    }
+  };
+
   if (loading) {
     return <div className='loading'><CircularProgress /></div>;
   }
@@ -111,7 +119,9 @@ const ProductDetails = () => {
 
             <div className='ProductDetailsRight'>
               <h2>{product.title}</h2>
-              <p>{renderStars(product.rating)} 2.7k rating</p>
+              <p onClick={scrollToReviews} style={{ cursor: 'pointer' }}>
+                {renderStars(product.rating, scrollToReviews)} 2.7k rating
+              </p>
               <div className="priceDiv">
                 <p className='productPercentageText'>-{product.discountPercentage}% Off</p>
                 <h2>₹ {inr(product.price)}</h2>
@@ -126,12 +136,11 @@ const ProductDetails = () => {
               />
 
               <div className='addToCartDiv'>
-                <Button onClick={AddToCartFunction} variant="contained" color="success" disabled={isInCart && quantity === cartQuantity}>
+                <Button onClick={AddToCartFunction} sx={BStyles} disabled={isInCart && quantity === cartQuantity}>
                   {isInCart && quantity === cartQuantity ? 'Added to Cart' : buttonMsg}
-                  <AddShoppingCartIcon />
                 </Button>
-                <Button className="payBttn" color="secondary" onClick={proceedToPay}>
-                  Proceed to Pay
+                <Button className="payBttn" sx={BStyles} onClick={proceedToPay}>
+                   Proceed to Pay
                 </Button>
               </div>
 
@@ -161,6 +170,7 @@ const ProductDetails = () => {
 
         <PreviousVisited /> 
         <ProductList cat={product?.category} />
+        {product && <Review ref={reviewRef} reviews={product.reviews} productId={product.id} />} {/* Pass reviews and product ID to the Review component */}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import "./Header.css";
 import logo from "../../assets/logo.png";
 import cart from "../../icons/cart.png";
 import heart from "../../icons/heart.svg";
-import user from "../../icons/user.svg";
+import user from "../../icons/user.png";
 import search from "../../icons/search.svg";
 import { Link } from 'react-router-dom';
 import menu from '../../icons/menu.png';
@@ -85,7 +85,7 @@ const Header = ({ totalCount }) => {
           </div>
         </div>
         <div className='loginBtn'>
-            <AccountCircle style={{ fontSize: 24 }} /> {/* Adjust size if needed */}
+            <img className='iconImg' src={user} alt="Login Icon" />
             <h4>Login</h4>
         </div>
       </div>

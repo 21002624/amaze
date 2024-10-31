@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import PinCodeComponent from '../../Components/SimpleComponents/PinCodeComponent';
 import Coupon from '../../Components/SimpleComponents/Coupon';
+import toast from 'react-hot-toast';
 
 const Pay = () => {
   const location = useLocation();
@@ -22,6 +23,9 @@ const Pay = () => {
     setDiscount(amount);
   };
 
+  const addresspage=()=>{
+    navigate('/address');
+  }
 
   return (
     <div className='pay'>
@@ -116,9 +120,9 @@ const Pay = () => {
                 <p className='taxText'>FREE</p>
               </div>
               <div className="totalAmountDiv">
-              <Button className='placeOrderBtn' variant="contained" color="error">
-                PLACE ORDER
-              </Button>
+                <Button className='placeOrderBtn' variant="contained" color="error" onClick={addresspage} >
+                  PLACE ORDER
+                </Button>
               </div>
             </div>
           </div>

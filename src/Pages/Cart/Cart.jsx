@@ -9,6 +9,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { renderStars, inr, name, calculateDiscountPercentage, freeShippingEligibility } from '../../Components/SimpleComponents/SimpleComponents';
 import { Link } from 'react-router-dom';
 import PreviousVisited from '../PreviousVisited/PreviousVisited';
+import { BStyles } from '../../Components/SimpleComponents/SimpleComponents';
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -75,7 +76,12 @@ const Cart = () => {
   const proceedToPay = () => {
     const totalPrice = calculateTotalPrice();
     const totalDiscount = calculateTotalDiscount();
-    navigate('/pay', { state: {cart, totalPrice, totalDiscount } });
+    if(totalPrice == 0){
+      toast.error("your cart is empty!");
+    }
+    else{
+      navigate('/pay', { state: {cart, totalPrice, totalDiscount } });
+    }
   };
 
   return (
@@ -134,7 +140,7 @@ const Cart = () => {
         <p>Total Count in Cart: {totalCount}</p>
         <p>Subtotal ({totalCount} items): ₹ {calculateTotalPrice()}</p>
         <p>Total Discount: ₹ {calculateTotalDiscount()}</p>
-          <Button className="payBttn" color="secondary" onClick={proceedToPay}>
+          <Button className="payBttn" sx={BStyles} onClick={proceedToPay}>
           Proceed to Pay
         </Button>
       </div>

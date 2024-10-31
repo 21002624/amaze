@@ -46,11 +46,11 @@
     gap: .5rem;
 }
 .serviceDiv{
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
 }
 .serviceBox{
     display: flex;
@@ -69,6 +69,7 @@
     align-items: center;
     justify-content: space-between;
 }
+
 
 @media (max-width: 768px) {
     .ProductDetails{

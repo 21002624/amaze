@@ -1,30 +1,19 @@
-import star from '../../icons/empty-star.png';
-import emptyStar from '../../icons/star.svg'; 
 import './SimpleComponents.css';
 import { useEffect, useState } from 'react';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import Rating from '@mui/material/Rating';
 
-export const renderStars = (rating) => {
-    const fullStars = Math.floor(rating); 
-    const maxStars = 5;  
-    const emptyStars = maxStars - fullStars; 
+export const renderStars = (rating, scrollToReviews) => {
+    const fullStars = Math.floor(rating);
 
     return (
-        <>
-            {/* Render full stars */}
-            {Array(fullStars).fill().map((_, index) => (
-                <img className='starIcon' key={`full-${index}`} src={star} alt="full-star" style={{ width: '15px', height: '20px' }} />
-            ))}
-
-            {/* Render empty stars */}
-            {Array(emptyStars).fill().map((_, index) => (
-                <img className='starIcon' key={`empty-${index}`} src={emptyStar} alt="empty-star" style={{ width: '15px', height: '20px' }} />
-            ))}
-
-            {/* Show rating out of 5 */}
-            {/* <p>{rating.toFixed(1)} out of {maxStars}</p> */}
-        </>
+        <span onClick={scrollToReviews} style={{ cursor: 'pointer' }}>
+            <Rating name="read-only" value={fullStars} readOnly sx={{ fontSize: { md: '3rem' },
+            minHeight: '5rem',
+            minWidth: '5rem',
+         }} />
+        </span>
     );
 };
 
@@ -35,8 +24,8 @@ export const inr = (price) => {
 };
 
 export const name = (title) => {
-    const words = title.split(' '); // Split the title into words
-    return words.length > 2 ? `${words[0]}...` : title; // Return first word and ellipsis if more than one word
+    const words = title.split(' '); 
+    return words.length > 2 ? `${words[0]}...` : title; 
 };
 
 export const calculateDiscountPercentage = (originalPrice, discountedPrice) => {
@@ -62,25 +51,25 @@ const QuantityControls = ({ initialCount = 1, onChange }) => {
     const decreaseCount = () => {
         setCount(prevCount => {
             const newCount = prevCount > 1 ? prevCount - 1 : prevCount;
-            onChange?.(newCount); // Notify parent if onChange callback is provided
+            onChange?.(newCount); 
             return newCount;
         });
     };
     const increaseCount = () => {
         setCount(prevCount => {
             const newCount = prevCount + 1;
-            onChange?.(newCount); // Notify parent if onChange callback is provided
+            onChange?.(newCount); 
             return newCount;
         });
     };
 
     return (
         <div className="quantity-controls">
-            <button onClick={decreaseCount}>
+            <button className="circleButton" onClick={decreaseCount}>
                 <RemoveIcon /> 
             </button>
             <p>{count}</p>
-            <button onClick={increaseCount}>
+            <button className="circleButton" onClick={increaseCount}>
                 <AddIcon /> 
             </button>
         </div>
@@ -93,3 +82,15 @@ export const totalCount =()=>{
     
 }
   
+export const BStyles = {
+    backgroundColor: '#FFD700',
+    color: 'black',
+    '&:hover': {
+      backgroundColor: '#ffdf28',
+    },
+    borderRadius: '300px',
+    width: '250px',
+    textTransform: 'none',
+    height: '3rem',
+    fontFamily : 'Josefin Sans',
+  };
