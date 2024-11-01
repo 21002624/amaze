@@ -1,10 +1,10 @@
-import { useState, useEffect ,refresh } from 'react';
+import { useState, useEffect ,refresh, useRef } from 'react';
 import './App.css';
 import Header from './Pages/Header/Header';
 import Home from './Pages/Home/Home';
-import ProductList from './Components/ProductList/ProductList';
+import Search from './Pages/Search/Search';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter ,useNavigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Footer from './Pages/Footer/Footer';
 import Cart from './Pages/Cart/Cart';
@@ -20,6 +20,10 @@ import Address from './Pages/Address/Address';
 function App() {
   const [cart, setCart] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
+  const navigate = useNavigate(); 
+  const [searchItem, setSearchItem] = useState('');
+  const searchInputRef = useRef(null);
+
 
   useEffect(() => {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -35,12 +39,21 @@ function App() {
     setTotalCount(newTotalCount);
   };
 
+  const SearchItem = (searchTerm) => {  
+    if (!searchTerm) return;
+    setSearchItem(searchTerm);
+    navigate('/search', { state: { searchItem: searchTerm } });
+  };
+  
+
   return (
-    <BrowserRouter>
-      <Header totalCount={totalCount} />
+    <>
+    {/* <BrowserRouter> */}
+      <Header totalCount={totalCount} SearchItem={SearchItem}  />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/wishlist' element={<Wish />} />
+        <Route path="/search" element={<Search />} />
         <Route path='/pay' element={<Pay />} />
         <Route path='/address' element={<Address />} />
         <Route path='/womens' element={<Womens />} />
@@ -53,7 +66,9 @@ function App() {
       <Footer />
       <Toaster position="top-center" reverseOrder={false} />
       {/* <MyChatBot /> */}
-    </BrowserRouter>
+    {/* </BrowserRouter> */}
+    </>
+    
   );
 }
 

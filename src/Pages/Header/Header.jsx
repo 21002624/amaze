@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useRef } from 'react';
 import "./Header.css";
 import logo from "../../assets/logo.png";
 import cart from "../../icons/cart.png";
@@ -12,11 +12,19 @@ import NavigationIcon from '@mui/icons-material/Navigation';
 import Fab from '@mui/material/Fab';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 
-const Header = ({ totalCount }) => {
-  const [isOpen, setIsOpen] = useState(false); // State to manage sidebar visibility
+
+const Header = ({ totalCount ,SearchItem  }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const searchInputRef = useRef(null);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleSearchKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      SearchItem(searchInputRef.current?.value);
+    }
   };
 
   return (
@@ -42,7 +50,14 @@ const Header = ({ totalCount }) => {
         <div className="part2">
           <div className="searchContainer">
             <div className="inputWrapper">
-              <input className="searchBar" type="text" placeholder="Search" />
+            <input
+                ref={searchInputRef}
+                onKeyDown={handleSearchKeyDown}
+                className="searchBar"
+                type="text"
+                placeholder="Search"
+              />
+
               <img className="iconImg1" src={search} alt="Search Icon" />
             </div>
           </div>

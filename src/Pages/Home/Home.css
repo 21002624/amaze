@@ -110,5 +110,8 @@
   .bannerItem {
     flex: 1 1 100px; 
   }
+  .h2Style{
+    padding-left: 0;
+  }
 
 }
