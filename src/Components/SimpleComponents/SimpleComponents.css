@@ -82,6 +82,10 @@
     padding: 0;
     margin: .1rem;
   }
+  .quantity-controls{
+    display: flex;
+    align-items: center;
+  }
 
   @media (max-width: 768px){
     .review-section{

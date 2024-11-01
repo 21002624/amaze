@@ -155,7 +155,9 @@ const ProductDetails = () => {
                 </div>
                 <div className="serviceBox">
                   <img className='serviceiconImg' src={cash} alt="Cash on Delivery" />
-                  <p className='serviceText'>Cash on delivery</p>
+                  <div>
+                    <p className='serviceText'>Cash on delivery</p>
+                  </div>
                 </div>
                 <div className="serviceBox">
                   <img className='serviceiconImg' src={check} alt="Secure Payments" />
