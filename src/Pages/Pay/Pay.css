@@ -105,7 +105,7 @@
         margin: 1rem 0;
     }
     .pay{
-        margin-left: 1rem;
+        padding: .5rem;
     }
 
     .pay p{
@@ -122,6 +122,9 @@
     .payLeft, .payRight {
         width: 100%;
         border: none;
+    }
+    .payLeft{
+        padding-right: 0;
     }
 
     .payRight {

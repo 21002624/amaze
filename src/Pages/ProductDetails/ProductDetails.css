@@ -6,6 +6,13 @@
     margin: .5rem;
     gap: 2rem;
 }
+.productdetailspage{
+    margin-top: 1rem;
+}
+.similarText{
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
 
 .ProductDetailsLeft{
     display: flex;
@@ -75,7 +82,6 @@
     .ProductDetails{
         display: flex;
         flex-direction: column;
-        width: 100%;
         justify-content: flex-start;
     }
     .ProductDetails div{

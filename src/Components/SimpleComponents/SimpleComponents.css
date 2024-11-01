@@ -64,6 +64,8 @@
     padding-left: 10%;
     padding-right: 10%;
     gap: 2rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 2rem;
   }
 
   .reviewDiv{
@@ -83,8 +85,6 @@
 
   @media (max-width: 768px){
     .review-section{
-      width: 100%;
-      padding: 1rem;
     }
     .reviewDiv{
       margin-left: 2rem;

@@ -55,9 +55,6 @@
     .productList > div {
       gap: 10px;
     }
-    span{
-      display: none;
-    }
     .productList{
       padding: 5px;
     }

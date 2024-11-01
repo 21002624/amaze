@@ -61,11 +61,7 @@ const Header = ({ totalCount }) => {
                 <p>Wishlist</p>
               </div>
             </Link>
-            {/* <div className="icon">
-              <img className='iconImg' src={user} alt="Login Icon" />
-              <p>Login</p>
-            </div> */}
-            {/* Menu Icon for Mobile */}
+
             <img className="menuIcon" src={menu} alt="Menu" onClick={toggleSidebar} />
           </div>
         </div>
@@ -74,9 +70,11 @@ const Header = ({ totalCount }) => {
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
         <div>
+        {isOpen && (
           <div className="closeIcon" onClick={toggleSidebar}>
             <img className='iconImg' src={close} alt="Close" />
           </div>
+        )}
           <div className="sidebarNav">
             <Link to="/products" onClick={toggleSidebar}><p>Mens</p></Link>
             <Link to="/womens" onClick={toggleSidebar}><p>Womens</p></Link>

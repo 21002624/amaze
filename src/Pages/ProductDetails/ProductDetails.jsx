@@ -169,6 +169,7 @@ const ProductDetails = () => {
         )}
 
         <PreviousVisited /> 
+        <h2 className='similarText'>Explore Similar Products You’ll Love</h2>
         <ProductList cat={product?.category} />
         {product && <Review ref={reviewRef} reviews={product.reviews} productId={product.id} />} {/* Pass reviews and product ID to the Review component */}
       </div>

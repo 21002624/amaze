@@ -24,7 +24,7 @@ const PreviousVisited = () => {
           visitedProducts.map((product) => (
             <Link to={`/ProductDetails/${product.id}`} key={product.id} className="visitedProduct">
               <img src={product.thumbnail} alt={product.title} />
-              <p>{name(product.title)}</p>
+              {/* <p>{name(product.title)}</p> */}
             </Link>
           ))
         ) : (

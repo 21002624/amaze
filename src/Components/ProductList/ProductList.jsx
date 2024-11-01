@@ -37,14 +37,14 @@ const ProductList = (props) => {
 
     return (
         <div className='productList'>
-            <div>
+            <div>   
                 {products.map((product) => (
                     <Link to={`/ProductDetails/${product.id}`} key={product.id}>
                         <div className='productListSlider'>
                             <img src={product.thumbnail} alt={product.title} />
                             <p>{name(product.title)}</p>
                             <h2 className='productPercentageText' >{product.discountPercentage.toFixed(1)} % off</h2>
-                            <p>Price: ₹ {inr(product.price)} <span>₹ {inr(product.discountPercentage)}</span>   </p>
+                            <p>Price: ₹ {inr(product.price)} <br/> <span>₹ {inr(product.discountPercentage)}</span>   </p>
                             <p>{renderStars(product.rating)}</p>
                         </div>
                     </Link>

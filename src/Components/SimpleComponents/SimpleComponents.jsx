@@ -9,10 +9,7 @@ export const renderStars = (rating, scrollToReviews) => {
 
     return (
         <span onClick={scrollToReviews} style={{ cursor: 'pointer' }}>
-            <Rating name="read-only" value={fullStars} readOnly sx={{ fontSize: { md: '3rem' },
-            minHeight: '5rem',
-            minWidth: '5rem',
-         }} />
+            <Rating name="read-only" value={fullStars} readOnly  />
         </span>
     );
 };

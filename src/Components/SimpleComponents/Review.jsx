@@ -16,7 +16,7 @@ const Review = forwardRef(({ reviews, productId }, ref) => {
               </p>
             </div>
             <div className='reviewDiv'>
-              <p>{renderStars(review.rating)} {review.rating} stars</p>
+              <p>{renderStars(review.rating)}</p>
               <p>{review.comment}</p>
             </div>
           </div>
