@@ -246,6 +246,19 @@ header {
   gap: .5rem;
 }
 
+.leftArrow{
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+
+@media (min-width: 768px) {
+  .leftArrow {
+    display: none; /* Hide on desktop screens */
+  }
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .menuIcon {

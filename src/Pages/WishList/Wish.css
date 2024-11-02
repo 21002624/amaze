@@ -20,10 +20,6 @@
   }
   
   .wishItem button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 5px 10px;
     cursor: pointer;
   }
   

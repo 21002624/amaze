@@ -53,17 +53,16 @@ const Header = ({ totalCount ,SearchItem  }) => {
 
         <div className="part2">
 
-        <div className="leftArrow">
         {!isHomePage && (
           <div
             className="leftArrow"
             onClick={() => navigate(-1)} 
             style={{ cursor: 'pointer' }}
           >
-            <img className="iconImg" src={left} alt="Go back" />
+            <img className="leftArrow" src={left} alt="Go back" />
           </div>
         )}
-        </div>
+
 
           <div className="searchContainer">
             <div className="inputWrapper">
