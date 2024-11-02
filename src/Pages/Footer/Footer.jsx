@@ -1,6 +1,9 @@
 import React from 'react'
 import './Footer.css';
-import { FaFacebook,FaWhatsapp,FaInstagram,FaTwitter } from 'react-icons/fa';
+import { FaFacebook,FaWhatsapp,FaInstagram,FaTwitter, FaPortrait, FaUser, FaLinkedin } from 'react-icons/fa';
+import insta from '../../icons/insta.png';
+import linkedin from '../../icons/linkedin.png';
+import port from '../../icons/port.png'
 
 const Footer = () => {
   return (
@@ -28,10 +31,15 @@ const Footer = () => {
         <div className='Foot1'>
           <h2>Connect with Us</h2>
           <div className='socialLinks'>
-            <a><FaFacebook size={30} /></a>
-            <a><FaWhatsapp size={30} /></a>
-            <a><FaInstagram size={30} /></a>
-            <a><FaTwitter size={30} /></a>
+            <a href="https://im-akash.netlify.app/" target="_blank" >
+              <img className='footImg' src={port} /> 
+            </a>
+            <a href="https://www.linkedin.com/in/im-akasharul/" target="_blank" >
+              <img className='footImg' src={linkedin} />
+            </a>
+            <a href="https://www.instagram.com/akzhxx_/" target="_blank">
+              <img className='footImg' src={insta} />
+            </a>
           </div>
         </div>
       </div>
