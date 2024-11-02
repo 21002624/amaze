@@ -10,6 +10,7 @@ import { renderStars, inr, name, calculateDiscountPercentage, freeShippingEligib
 import { Link } from 'react-router-dom';
 import PreviousVisited from '../PreviousVisited/PreviousVisited';
 import { BStyles } from '../../Components/SimpleComponents/SimpleComponents';
+import badge from '../../icons/badge.png';
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -122,10 +123,23 @@ const Cart = () => {
                   </div>
                 </div>
                 <div className="cartPriceDetails">
-                  <p>
-                    <button>{item.discountPercentage} off</button> On sale
+                <div className="badgeContainer" style={{ position: 'relative', display: 'inline-block' }}>
+                  <img className="badgeIcon" src={badge} alt="badge" style={{ width: '50px', height: '50px' }} />
+                  <p
+                    style={{
+                      position: 'absolute',
+                      top: '30%',
+                      left: '53%',
+                      transform: 'translate(-50%, -50%)',
+                      fontSize: '0.7rem',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    {item.discountPercentage} off
                   </p>
-                  <p>₹ {inr(item.price)}</p>
+                </div>
+
+                  <h4>₹ {inr(item.price)}</h4>
                   <p>M.R.P : <span>₹{inr(item.discountPercentage)}</span></p>
                 </div>
               </div>

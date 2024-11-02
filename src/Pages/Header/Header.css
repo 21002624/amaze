@@ -115,9 +115,7 @@ header {
 
 
 
-/* Media Queries for Responsiveness */
 
-/* Small screens */
 @media (max-width: 768px) {
   header {
     flex-direction: column; 
@@ -125,7 +123,7 @@ header {
   }
 
   .part1 {
-    display: none; /* Hide part1 on small screens */
+    display: none; 
   }
 
   .part2 {
@@ -139,8 +137,8 @@ header {
   }
 
   .iconDiv {
-    flex-wrap: wrap;
     justify-content: space-between;
+    flex-wrap: nowrap;
   }
   .bannerItem{
     max-width: 100%;
@@ -150,32 +148,6 @@ header {
   }
 }
 
-/* Medium screens */
-@media (min-width: 768px) and (max-width: 1024px) {
-  header {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .part1,
-  .part2 {
-    justify-content: space-between;
-    flex-wrap: nowrap;
-  }
-
-  .searchBar {
-    display: none; /* Hide search bar on medium screens */
-  }
-
-  .iconImg1 {
-    display: none;
-  }
-
-  .iconDiv {
-    width: 180px;
-    gap: 0.8rem;
-  }
-}
 
 /* Extra Small screens (below 480px) */
 @media (max-width: 480px) {
@@ -186,29 +158,28 @@ header {
   }
 
   .logoImg {
-    width: 80px; /* Smaller logo for extra small screens */
+    width: 80px; 
     height: auto;
   }
 
   .part2 {
     width: 100%;
-    justify-content: center; /* Center content */
+    justify-content: center; 
     gap: 1rem;
   }
 
   .searchBar {
-    width: 100%; /* Full width for small screens */
-    padding: 8px; /* Reduce padding */
+    width: 100%; 
+    padding: 8px; 
   }
 
   .iconDiv {
     gap: 0.5rem;
     justify-content: center;
-    flex-wrap: wrap; /* Wrap icons on smaller screens */
   }
 
   .icon p {
-    font-size: 12px; /* Smaller font for labels */
+    font-size: 12px; 
   }
   .bannerGrid1{
     flex-wrap: nowrap;
@@ -299,7 +270,6 @@ header {
   }
 
   .iconDiv {
-    flex-wrap: wrap;
     justify-content: space-between;
   }
 

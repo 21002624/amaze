@@ -91,7 +91,7 @@ h1 {
   border-radius: 5px;
   padding: 10px;
   position: sticky;
-  top: 200px;
+  /* top: 200px; */
 }
 
 .categoryDiv ul {
@@ -140,6 +140,7 @@ h1 {
   .categoryDiv {
     overflow-x: auto; 
     border: none;
+     top: 200px;
 }
 
 .categoryDiv ul {

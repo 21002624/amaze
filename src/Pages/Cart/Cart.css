@@ -96,6 +96,10 @@
   display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
 }
 
+.badgeIcon{
+  width: 30px;
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
   .cart {
