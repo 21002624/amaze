@@ -9,13 +9,16 @@ import { Link } from 'react-router-dom';
 import menu from '../../icons/menu.png';
 import close from '../../icons/close.png';
 import NavigationIcon from '@mui/icons-material/Navigation';
-import Fab from '@mui/material/Fab';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-
+import left from '../../icons/left-arrow.png';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header = ({ totalCount ,SearchItem  }) => {
   const [isOpen, setIsOpen] = useState(false);
   const searchInputRef = useRef(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const isHomePage = location.pathname === '/'; 
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -38,6 +41,7 @@ const Header = ({ totalCount ,SearchItem  }) => {
             </div>
           </Link>
 
+
           {/* Category Menu */}
           <div className="category">
             <Link to="/products"><h4>Mens</h4></Link>
@@ -48,6 +52,19 @@ const Header = ({ totalCount ,SearchItem  }) => {
         </div>
 
         <div className="part2">
+
+        <div className="leftArrow">
+        {!isHomePage && (
+          <div
+            className="leftArrow"
+            onClick={() => navigate(-1)} 
+            style={{ cursor: 'pointer' }}
+          >
+            <img className="iconImg" src={left} alt="Go back" />
+          </div>
+        )}
+        </div>
+
           <div className="searchContainer">
             <div className="inputWrapper">
             <input
