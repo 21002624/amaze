@@ -32,12 +32,16 @@ function App() {
     setTotalCount(initialTotalCount);
   }, [refresh]);
 
-  // Function to update cart and total count
-  const updateCart = (updatedCart) => {
-    setCart(updatedCart);
-    const newTotalCount = updatedCart.reduce((sum, item) => sum + item.quantity, 0);
-    setTotalCount(newTotalCount);
+
+  // const updateCart = (updatedCart) => {
+  //   setCart(updatedCart);
+  //   const newTotalCount = updatedCart.reduce((sum, item) => sum + item.quantity, 0);
+  //   setTotalCount(newTotalCount);
+  // };
+  const updateTotalCountInHeader = (count) => {
+    setTotalCount(count);
   };
+  
 
   const SearchItem = (searchTerm) => {  
     if (!searchTerm) return;
@@ -59,7 +63,7 @@ function App() {
         <Route path='/womens' element={<Womens />} />
         <Route path='/accessories' element={<Accessories />} />
         <Route path='/appliances' element={<Appliances />} />
-        <Route path='/cart' element={<Cart cart={cart} updateCart={updateCart} />} />
+        <Route path='/cart' element={<Cart cart={cart} updateTotalCountInHeader={updateTotalCountInHeader} />} />
         <Route path='/products/:category?' element={<Products />} />
         <Route path="/ProductDetails/:id" element={<ProductDetails />} />
       </Routes>

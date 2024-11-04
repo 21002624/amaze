@@ -12,7 +12,7 @@ import PreviousVisited from '../PreviousVisited/PreviousVisited';
 import { BStyles } from '../../Components/SimpleComponents/SimpleComponents';
 import badge from '../../icons/badge.png';
 
-const Cart = () => {
+const Cart = ({ updateTotalCountInHeader }) => {
   const [cart, setCart] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const navigate = useNavigate();
@@ -20,9 +20,9 @@ const Cart = () => {
   useEffect(() => {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     setCart(cartItems);
-    
     const initialTotalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
     setTotalCount(initialTotalCount);
+    updateTotalCountInHeader(initialTotalCount);
   }, []);
 
   const calculateTotalPrice = () => {
@@ -42,24 +42,23 @@ const Cart = () => {
     }, 0).toFixed(2);
   };
 
+  const updateCartAndTotalCount = (updatedCart) => {
+    setCart(updatedCart);
+    const newTotalCount = updatedCart.reduce((sum, item) => sum + item.quantity, 0);
+    setTotalCount(newTotalCount);
+    updateTotalCountInHeader(newTotalCount); // Sync with Header
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  };
+
   const removeItemFromCart = (id) => {
     const updatedCart = cart.filter(item => item.id !== id);
-    setCart(updatedCart);
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-    updateTotalCount(updatedCart);
+    updateCartAndTotalCount(updatedCart);
     toast.success("Item removed");
   };
 
   const increaseCount = (id) => {
-    const updatedCart = cart.map(item => {
-      if (item.id === id) {
-        return { ...item, quantity: item.quantity + 1 };
-      }
-      return item;
-    });
-    setCart(updatedCart);
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-    updateTotalCount(updatedCart);
+    const updatedCart = cart.map(item => (item.id === id ? { ...item, quantity: item.quantity + 1 } : item));
+    updateCartAndTotalCount(updatedCart);
   };
 
   const decreaseCount = (id) => {

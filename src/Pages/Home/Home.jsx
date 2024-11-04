@@ -170,7 +170,7 @@ const Home = () => {
             
             <ProductList cat="groceries" />
             <div className='listTitle'>
-                <h1>Groceries</h1>
+                <h1>Natural Beauty Boosters</h1>
             </div>
             <ProductList cat="beauty" />
     </div>

@@ -1,20 +1,22 @@
-// Wishlist.js
 import React, { useState, useEffect } from 'react';
-import { toast } from 'react-hot-toast';
-import likeIcon from '../../icons/like.svg'; // Default like icon
-import redlove from '../../icons/redlove.png'; // Wishlist icon
+import { toast } from 'react-hot-toast'; 
+import IconButton from '@mui/material/IconButton';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Wishlist = ({ product }) => {
     const [isWished, setIsWished] = useState(false);
 
     useEffect(() => {
-        // Check if the product is already in the wishlist when the component mounts
+        // Reset `isWished` when the product changes
+        setIsWished(false);
+        
+        // Check if the new product is already in the wishlist
         const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
         const existingProduct = wishlist.find(item => item.id === product.id);
         if (existingProduct) {
             setIsWished(true); // Set to true if product is already wished
         }
-    }, [product.id]);
+    }, [product]); // Dependency array includes `product` to run whenever it changes
 
     const handleWishlistToggle = () => {
         const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
@@ -36,15 +38,10 @@ const Wishlist = ({ product }) => {
     };
 
     return (
-        <img
-            className='iconImg'
-            src={isWished ? redlove : likeIcon} // Change icon based on isWished state
-            alt="Add to Wishlist"
-            onClick={handleWishlistToggle}
-            style={{ cursor: 'pointer', opacity: 1 }} // Always fully opaque
-        />
+        <IconButton onClick={handleWishlistToggle} color="default">
+            <FavoriteIcon style={{ color: isWished ? 'red' : 'gray' }} />
+        </IconButton>
     );
 };
 
 export default Wishlist;
-    
