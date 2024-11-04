@@ -137,7 +137,8 @@ const ProductDetails = () => {
 
               <div className='addToCartDiv'>
                 <Button onClick={AddToCartFunction} sx={BStyles} disabled={isInCart && quantity === cartQuantity}>
-                  {isInCart && quantity === cartQuantity ? 'Added to Cart' : buttonMsg}
+                  {/* {isInCart && quantity === cartQuantity ? 'Added to Cart' : buttonMsg} */}
+                  Added to Cart
                 </Button>
                 <Button className="payBttn" sx={BStyles} onClick={proceedToPay}>
                    Proceed to Pay

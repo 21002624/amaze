@@ -174,9 +174,10 @@ h1 {
   }
 
   .productFilters {
-    width: 100%; 
+    width: 95%; 
     border-right: none;
     padding: 0;
+    margin-left: 10px;
   }
 
 
