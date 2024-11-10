@@ -14,7 +14,6 @@ const Appliances = () => {
     useEffect(() => {
         setLoading(true);
 
-        // Determine the fetch URL based on selected categories
         const fetchProducts = selectedCategories.length
             ? Promise.all(
                 selectedCategories.map((category) =>
@@ -22,8 +21,8 @@ const Appliances = () => {
                         .then((response) => response.json())
                         .then((data) => data.products)
                 )
-              ).then((results) => results.flat()) // Flatten results into a single array
-            : fetch('https://dummyjson.com/products/category/kitchen-accessories') // Fetch all products if no category is selected
+              ).then((results) => results.flat()) 
+            : fetch('https://dummyjson.com/products/category/kitchen-accessories') 
                 .then((response) => response.json())
                 .then((data) => data.products);
 
@@ -46,11 +45,10 @@ const Appliances = () => {
     };
 
     const handleClear = () => {
-        setSelectedCategories([]); // Clear selected categories to fetch all products
+        setSelectedCategories([]); 
     };
 
-    const displayedItemCount = products.length; // Count of displayed items
-
+    const displayedItemCount = products.length; 
     if (loading) {
         return <div className='loading'><CircularProgress /></div>;
     }

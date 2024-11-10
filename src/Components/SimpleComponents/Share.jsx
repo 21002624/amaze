@@ -2,6 +2,8 @@
 import React from 'react';
 import shareIcon from '../../icons/share.svg'; // Replace with your share icon path
 import { toast } from 'react-hot-toast';
+import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
+import './SimpleComponents.css';
 
 const Share = ({ product }) => {
     const handleShare = () => {
@@ -35,13 +37,10 @@ const Share = ({ product }) => {
     };
 
     return (
-        <img
-            className='iconImg'
-            src={shareIcon}
-            alt="Share"
-            onClick={handleShare}
-            style={{ cursor: 'pointer' }}
-        />
+        <div className='shareBtn' onClick={handleShare}>
+            <ShareOutlinedIcon />
+        </div>
+        
     );
 };
 

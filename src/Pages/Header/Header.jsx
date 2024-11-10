@@ -11,6 +11,12 @@ import close from '../../icons/close.png';
 import NavigationIcon from '@mui/icons-material/Navigation';
 import left from '../../icons/left-arrow.png';
 import { useLocation, useNavigate } from 'react-router-dom';
+import FavoriteSharpIcon from '@mui/icons-material/FavoriteSharp';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import MenuIcon from '@mui/icons-material/Menu';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
 const Header = ({ totalCount ,SearchItem  }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +65,7 @@ const Header = ({ totalCount ,SearchItem  }) => {
             onClick={() => navigate(-1)} 
             style={{ cursor: 'pointer' }}
           >
-            <img className="leftArrow" src={left} alt="Go back" />
+            <ArrowBackIcon />
           </div>
         )}
 
@@ -81,19 +87,21 @@ const Header = ({ totalCount ,SearchItem  }) => {
           <div className="iconDiv">
             <Link to='/cart'>
               <div className="icon">
-                <img className='iconImg' src={cart} alt="Cart Icon" />
+                <ShoppingCartOutlinedIcon />
                 <p>Cart</p>
                 {totalCount > 0 && <p className="cart-count">{totalCount}</p>}
               </div>
             </Link>
             <Link to='/wishlist'>
               <div className="icon">
-                <img className='iconImg' src={heart} alt="Wishlist Icon" />
+                <FavoriteSharpIcon />
                 <p>Wishlist</p>
               </div>
             </Link>
 
-            <img className="menuIcon" src={menu} alt="Menu" onClick={toggleSidebar} />
+            <div onClick={toggleSidebar}>
+              <MenuIcon />
+            </div>
           </div>
         </div>
       </header>
@@ -103,7 +111,7 @@ const Header = ({ totalCount ,SearchItem  }) => {
         <div>
         {isOpen && (
           <div className="closeIcon" onClick={toggleSidebar}>
-            <img className='iconImg' src={close} alt="Close" />
+            <CloseOutlinedIcon />
           </div>
         )}
           <div className="sidebarNav">
@@ -114,7 +122,7 @@ const Header = ({ totalCount ,SearchItem  }) => {
           </div>
         </div>
         <div className='loginBtn'>
-            <img className='iconImg' src={user} alt="Login Icon" />
+            <AccountCircleOutlinedIcon />
             <h4>Login</h4>
         </div>
       </div>

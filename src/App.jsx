@@ -16,6 +16,7 @@ import Appliances from './Pages/Products/Appliances';
 import Wish from './Pages/WishList/Wish';
 import MyChatBot from '../src/Pages/MyChatBot/MyChatBot';
 import Address from './Pages/Address/Address';
+import Switch from  './Components/Switch/Switch'
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -67,6 +68,7 @@ function App() {
         <Route path='/products/:category?' element={<Products />} />
         <Route path="/ProductDetails/:id" element={<ProductDetails />} />
       </Routes>
+        <Switch />
       <Footer />
       <Toaster position="top-center" reverseOrder={false} />
       {/* <MyChatBot /> */}

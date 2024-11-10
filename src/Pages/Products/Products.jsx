@@ -73,6 +73,12 @@ const Products = () => {
                                     checked={selectedCategories.includes(cat)}
                                     onChange={handleCategoryChange}
                                     name={cat}
+                                    sx={{
+                                        color: "#000",  // Default color when not checked
+                                        '&.Mui-checked': {
+                                          color: "#000",  // Color when checked
+                                        },
+                                      }}
                                 />
                                 <p className='smallText' >{cat.replace('-', ' ').charAt(0).toUpperCase() + cat.replace('-', ' ').slice(1)}</p>
                             </li>

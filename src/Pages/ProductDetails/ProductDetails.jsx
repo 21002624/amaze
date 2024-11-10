@@ -16,6 +16,10 @@ import restock from '../../icons/restock.svg';
 import check from '../../icons/shield-check.svg';
 import cash from '../../icons/deposit.svg';
 import Review from '../../Components/SimpleComponents/Review';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import AutorenewIcon from '@mui/icons-material/Autorenew';
+import PaymentsIcon from '@mui/icons-material/Payments';
+import SecurityIcon from '@mui/icons-material/Security';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -147,21 +151,21 @@ const ProductDetails = () => {
 
               <div className="serviceDiv">
                 <div className="serviceBox">
-                  <img className='serviceiconImg' src={free} alt="Free Delivery" />
+                  <LocalShippingIcon />
                   <p className='serviceText'>Free delivery</p>
                 </div>
                 <div className="serviceBox">
-                  <img className='serviceiconImg' src={restock} alt="Restock Guarantee" />
+                  <AutorenewIcon />
                   <p className='serviceText'>Restock guarantee</p>
                 </div>
                 <div className="serviceBox">
-                  <img className='serviceiconImg' src={cash} alt="Cash on Delivery" />
+                  <PaymentsIcon />
                   <div>
                     <p className='serviceText'>Cash on delivery</p>
                   </div>
                 </div>
                 <div className="serviceBox">
-                  <img className='serviceiconImg' src={check} alt="Secure Payments" />
+                  <SecurityIcon />
                   <p className='serviceText'>Secure payments</p>
                 </div>
               </div>

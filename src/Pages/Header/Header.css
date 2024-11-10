@@ -5,12 +5,12 @@ header {
   height: 50px;
   padding: 0 1rem;
   position: sticky; 
-  top: 0;           
-  background-color: white; 
+  top: 0;            
   z-index: 1000;   
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
   padding-top: .9rem;
-  padding-bottom: .2rem;
+  padding-bottom: .5rem;
+  background-color: #fff;
 }
 
 
@@ -196,7 +196,7 @@ header {
   background-color: #fff;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
   transition: right 0.3s ease; /* Smooth transition */
-  z-index: 1000; /* Make sure it's above other elements */
+  z-index: 1000000; /* Make sure it's above other elements */
   display: flex;
   flex-direction: column;
   justify-content: space-between;

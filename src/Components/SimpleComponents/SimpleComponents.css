@@ -6,6 +6,11 @@
 .couponApply{
     height: 30px;
 }
+.shareBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .CouponInput {
     width: 150px; /* Set the desired width */
     border: 1px solid red; /* Red border */

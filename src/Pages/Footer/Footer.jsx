@@ -4,17 +4,20 @@ import { FaFacebook,FaWhatsapp,FaInstagram,FaTwitter, FaPortrait, FaUser, FaLink
 import insta from '../../icons/insta.png';
 import linkedin from '../../icons/linkedin.png';
 import port from '../../icons/port.png'
+import AccountBoxOutlinedIcon from '@mui/icons-material/AccountBoxOutlined';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer = () => {
   return (
-    <div>
+    <div className='footer'>
         <div className='Footer'>
         <div className='Foot1'>
           <h2>Get to Know Us</h2>
             <div>
-              <p className='footP'>about Ecom</p>
+              <p className='footP'>About Ecom</p>
               <p className='footP'>Global Brand</p>
-              <p className='footP'>merchants</p>
+              <p className='footP'>Merchants</p>
             </div>
         </div>
 
@@ -32,13 +35,13 @@ const Footer = () => {
           <h2>Connect with Us</h2>
           <div className='socialLinks'>
             <a href="https://im-akash.netlify.app/" target="_blank" >
-              <img className='footImg' src={port} /> 
+              <AccountBoxOutlinedIcon />
             </a>
             <a href="https://www.linkedin.com/in/im-akasharul/" target="_blank" >
-              <img className='footImg' src={linkedin} />
+              <LinkedInIcon />
             </a>
             <a href="https://www.instagram.com/akzhxx_/" target="_blank">
-              <img className='footImg' src={insta} />
+              <InstagramIcon/>
             </a>
           </div>
         </div>

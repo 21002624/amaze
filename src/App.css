@@ -1,100 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+/* Import necessary fonts only once */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend:wght@100..900&family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Archivo+Black&family=Poiret+One&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend:wght@100..900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-
-
-
-*{
+/* General resets */
+* {
   text-decoration: none;
 }
-p{
-  padding: 0;
+body a {
+  text-decoration: none;
+  color: black;
+}
+p, h1, h2, h4, h5 {
   margin: 0;
-}
-h4{
-    /* font-family: "DM Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal; */
-    font-family: "Lexend", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  color: black;
+  padding: 0;
 }
 
-p{
-    font-family: "Josefin Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  color: black;
-}
-
-.loading{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-}
-span{
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-  font-size: small;
-  text-decoration: line-through;
-}
-h2{
-  font-family: "DM Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-h1{
-  
+/* Font Styles */
+h1 {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
 }
 
-h5{
+h2 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h4 {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+}
+
+h5 {
   font-family: "Poiret One", sans-serif;
   font-weight: 580;
   font-style: normal;
 }
-.productPercentageText{
+
+p {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+}
+
+span {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: small;
+  text-decoration: line-through;
+}
+
+/* Utility classes */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.productPercentageText {
   color: red;
 }
-.taxText{
+
+.taxText {
   color: green;
 }
 
-header a {
-  text-decoration: none; 
-}
-
-/* Or apply it to all links in your application */
-body a {
-  text-decoration: none; 
-  color: black;
-}
-.h2Style{
+.h2Style {
   padding-left: 7%;
 }
 
-.rcb-toggle-button{
+/* Specific button class */
+.rcb-toggle-button {
   width: 10px;
 }
