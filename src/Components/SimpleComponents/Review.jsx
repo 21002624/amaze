@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import user from '../../icons/user.png';
 import { renderStars } from '../../Components/SimpleComponents/SimpleComponents';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 const Review = forwardRef(({ reviews, productId }, ref) => {
   return (
@@ -10,7 +11,7 @@ const Review = forwardRef(({ reviews, productId }, ref) => {
         reviews.map((review) => (
           <div key={review.date} className="review-item">
             <div className='reviewer'>
-              <img className='iconImg' src={user} alt={`${review.reviewerName}'s profile`} />
+              <AccountCircleOutlinedIcon />
               <p>
                 <strong>{review.reviewerName}</strong> ({new Date(review.date).toLocaleDateString()})
               </p>

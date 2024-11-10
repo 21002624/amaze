@@ -1,292 +1,187 @@
 header {
+  position: sticky;
+  top: 0;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  height: 50px;
-  padding: 0 1rem;
-  position: sticky; 
-  top: 0;           
-  background-color: white; 
-  z-index: 1000;   
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-  padding-top: .9rem;
-  padding-bottom: .2rem;
-}
-
-
-.part1,
-.part2 {
-  display: flex;
-  width: 45%;
   align-items: center;
-  flex-wrap: nowrap;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Ensure the header stays above other content */
 }
 
 .part1 {
-  gap: 1rem;
-}
-
-.part2,
-.part1 {
-  justify-content: space-between;
-}
-
-.part1 div,
-.part2 div {
   display: flex;
+  align-items: cente2;
 }
 
-.logoImg {
-  width: 100px;
-  height: 40px;
-}
-
-.category {
+.part1 {
   gap: 2rem;
 }
 
-/* Search Bar Styles */
+.part2{
+  gap: 2rem;
+}
+
+
+.logoDiv {
+  display: flex;
+  gap: 1rem;
+}
+
+.logoImg {
+  width: 120px;
+  height: auto;
+}
+
+.category {
+  display: flex;
+  gap: 20px;
+}
+
+.category h4 {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.part2 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.leftArrow {
+  display: none;
+}
+
 .searchContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 .inputWrapper {
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
 .searchBar {
-  padding-right: 40px;
-  width: 300px;
   padding: 10px;
-  font-size: 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 14px;
 }
 
 .iconImg1 {
   position: absolute;
   right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  cursor: pointer;
 }
 
-.iconImg {
-  width: 20px;
-  height: 20px;
+.iconDiv {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .icon {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
   align-items: center;
-  justify-content: center;
-  position: relative; /* Add this line */
+  gap: 5px;
+  cursor: pointer;
 }
 
-
-.iconDiv {
-  gap: 1rem;
-  /* width: 200px; */
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.icon p {
-  margin: 0px;
-}
-/* Header.css */
 .cart-count {
-  position: absolute;
-  top: -4px; /* Adjust based on your layout */
-  right: 3px; /* Adjust based on your layout */
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  padding: 2px 6px;
+  background-color: #f44336;
+  color: #fff;
   font-size: 12px;
-  min-width: 2px; /* Ensure it has a minimum width */
-  text-align: center; /* Center text */
+  padding: 2px 8px;
+  border-radius: 50%;
 }
 
-
-
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column; 
-    align-items: flex-start; 
-  }
-
-  .part1 {
-    display: none; 
-  }
-
-  .part2 {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .searchBar {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .iconDiv {
-    justify-content: space-between;
-    flex-wrap: nowrap;
-  }
-  .bannerItem{
-    max-width: 100%;
-  }
-  .icon p{
-    display: none;
-  }
+.menuicon {
+  display: none;
+  cursor: pointer;
 }
 
-
-/* Extra Small screens (below 480px) */
-@media (max-width: 480px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding-top: .7rem;
-  }
-
-  .logoImg {
-    width: 80px; 
-    height: auto;
-  }
-
-  .part2 {
-    width: 100%;
-    justify-content: center; 
-    gap: 1rem;
-  }
-
-  .searchBar {
-    width: 100%; 
-    padding: 8px; 
-  }
-
-  .iconDiv {
-    gap: 0.5rem;
-    justify-content: center;
-  }
-
-  .icon p {
-    font-size: 12px; 
-  }
-  .bannerGrid1{
-    flex-wrap: nowrap;
-  } 
-}
-
-/* Sidebar styles */
+/* Sidebar Styles */
 .sidebar {
   position: fixed;
   top: 0;
-  right: -250px; 
+  right: -250px;
   width: 250px;
-  height: 100%;
+  height: 86%;
   background-color: #fff;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
-  transition: right 0.3s ease; /* Smooth transition */
-  z-index: 1000; /* Make sure it's above other elements */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  padding-top: 90px;
+  z-index: 999999;
 }
 
 .sidebar.open {
-  right: 0; /* Show sidebar */
-}
-
-.closeIcon {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px;
-  cursor: pointer;
+  right: 0;
 }
 
 .sidebarNav {
   padding: 20px;
 }
 
-.sidebarNav a {
-  display: block;
-  margin: 15px 0;
-  text-decoration: none;
-  color: #333;
+.sidebarNav p {
+  margin: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.loginBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 18px;
 }
 
-.sidebarNav a:hover {
-  color: #ff4d4d; /* Change color on hover */
-}
-
-/* Menu Icon for Mobile */
-.menuIcon {
-  display: none; /* Hide by default */
-}
-
-.sidebarNav p{
-  border-bottom: 1px solid #ddd;
-}
-
-.loginBtn{
-  margin-bottom: 20%;
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-}
-
-.leftArrow{
-  display: block;
-  width: 20px;
-  height: 20px;
-}
-
-
-@media (min-width: 768px) {
-  .leftArrow {
-    display: none; /* Hide on desktop screens */
-  }
-}
-
-/* Media Queries for Responsiveness */
+/* Show Back Arrow and Menu Icon on Mobile */
 @media (max-width: 768px) {
-  .menuIcon {
-    display: block; /* Show menu icon on small screens */
-    width: 30px; /* Adjust size as needed */
-    height: 30px; /* Adjust size as needed */
-    cursor: pointer; /* Show pointer cursor */
+  .leftArrow {
+    display: block;
+    width: 20px;
+    height: 20px;
   }
 
-  .part1 {
-    display: none; /* Hide part1 on small screens */
-  }
-
-  .part2 {
+  .part2{
     width: 100%;
-    justify-content: space-evenly;
+    gap: 20px;
   }
 
-  .searchBar {
-    width: 100%;
-    max-width: 300px;
+  .iconDiv{
+    gap: 15px;
   }
 
-  .iconDiv {
-    justify-content: space-between;
-  }
-
-  .icon p {
+  .part1{
     display: none;
+  }
+  .part2 p{
+    display: none;
+  }
+
+  .menuicon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .category {
+    display: none; /* Hide category links in mobile */
+  }
+
+  .logoDiv {
+    display: flex;
+    flex-grow: 1;
   }
 }
