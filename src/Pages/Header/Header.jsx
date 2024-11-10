@@ -1,15 +1,8 @@
-import React, { useState , useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import "./Header.css";
 import logo from "../../assets/logo.png";
-import cart from "../../icons/cart.png";
-import heart from "../../icons/heart.svg";
-import user from "../../icons/user.png";
 import search from "../../icons/search.svg";
 import { Link } from 'react-router-dom';
-import menu from '../../icons/menu.png';
-import close from '../../icons/close.png';
-import NavigationIcon from '@mui/icons-material/Navigation';
-import left from '../../icons/left-arrow.png';
 import { useLocation, useNavigate } from 'react-router-dom';
 import FavoriteSharpIcon from '@mui/icons-material/FavoriteSharp';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -18,7 +11,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
-const Header = ({ totalCount ,SearchItem  }) => {
+const Header = ({ totalCount, SearchItem }) => {
   const [isOpen, setIsOpen] = useState(false);
   const searchInputRef = useRef(null);
   const location = useLocation();
@@ -47,7 +40,6 @@ const Header = ({ totalCount ,SearchItem  }) => {
             </div>
           </Link>
 
-
           {/* Category Menu */}
           <div className="category">
             <Link to="/products"><h4>Mens</h4></Link>
@@ -58,28 +50,22 @@ const Header = ({ totalCount ,SearchItem  }) => {
         </div>
 
         <div className="part2">
-
-        {!isHomePage && (
-          <div
-            className="leftArrow"
-            onClick={() => navigate(-1)} 
-            style={{ cursor: 'pointer' }}
-          >
-            <ArrowBackIcon />
-          </div>
-        )}
-
+          {/* Back Arrow Icon (Mobile Only) */}
+          {!isHomePage && (
+            <div className="leftArrow" onClick={() => navigate(-1)} style={{ cursor: 'pointer' }}>
+              <ArrowBackIcon />
+            </div>
+          )}
 
           <div className="searchContainer">
             <div className="inputWrapper">
-            <input
+              <input
                 ref={searchInputRef}
                 onKeyDown={handleSearchKeyDown}
                 className="searchBar"
                 type="text"
                 placeholder="Search"
               />
-
               <img className="iconImg1" src={search} alt="Search Icon" />
             </div>
           </div>
@@ -99,7 +85,8 @@ const Header = ({ totalCount ,SearchItem  }) => {
               </div>
             </Link>
 
-            <div onClick={toggleSidebar}>
+            {/* Menu Icon (Mobile Only) */}
+            <div className='menuicon' onClick={toggleSidebar}>
               <MenuIcon />
             </div>
           </div>
@@ -109,11 +96,11 @@ const Header = ({ totalCount ,SearchItem  }) => {
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
         <div>
-        {isOpen && (
-          <div className="closeIcon" onClick={toggleSidebar}>
-            <CloseOutlinedIcon />
-          </div>
-        )}
+          {isOpen && (
+            <div className="closeIcon" onClick={toggleSidebar}>
+              <CloseOutlinedIcon />
+            </div>
+          )}
           <div className="sidebarNav">
             <Link to="/products" onClick={toggleSidebar}><p>Mens</p></Link>
             <Link to="/womens" onClick={toggleSidebar}><p>Womens</p></Link>
