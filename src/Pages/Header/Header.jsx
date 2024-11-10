@@ -84,11 +84,14 @@ const Header = ({ totalCount, SearchItem }) => {
                 <p>Wishlist</p>
               </div>
             </Link>
+            
+            <Link>
+              {/* Menu Icon (Mobile Only) */}
+              <div className='menuicon' onClick={toggleSidebar}>
+                <MenuIcon />
+              </div>
+            </Link>
 
-            {/* Menu Icon (Mobile Only) */}
-            <div className='menuicon' onClick={toggleSidebar}>
-              <MenuIcon />
-            </div>
           </div>
         </div>
       </header>
